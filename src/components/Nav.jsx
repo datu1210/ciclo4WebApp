@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default function Nav() {
 
   
-const rol1="profesor"
+const rol1="administrador"
   {/*"profesor"
 "estudiante"*/}
 
@@ -20,30 +20,61 @@ const rol1="profesor"
                     <span className="navbar-toggler-icon"></span>
                 </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
+                    {rol1 === "administrador" ? (
                     <ul className="navbar-nav"> 
  
-                        {rol1 === "administrador" ? (<li className="nav-item"> 
-                        <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>Gestionar Usuarios</Link>
-                        </li>)
-                        :(
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>Gestionar preguntas</Link>
-                             </li> )
-       
                         
-                        }
-                        {rol1 === "profesor" && ( <li className="nav-item"> <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>profesor</Link></li> 
                         
-                        )}
-                        {rol1 === "estudiante" && ( <li className="nav-item"> <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>Estudiante</Link></li> )}
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>  Salir</Link>
+                        <li className="nav-item"> 
+                        <Link className="nav-link" to="/usuarios"><i className='fa fa-user-times'></i>Gestionar Usuarios</Link>
                         </li>
                         
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/preguntas"><i className='fa fa-user-times'></i>Gestionar preguntas</Link>
+                             </li>
+                             <li className="nav-item">
+                            <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>  Salir</Link>
+                        </li>
+                             </ul>
+                        ):(<span></span>)
+
+                        }
+                {rol1 === "profesor" ? (
+                    <ul className="navbar-nav"> 
                         <li className="nav-item">
-                            <Link className="nav-link" to="/usuarios"><i className='fa fa-user-times'></i>  Usuarios</Link>
-                        </li>             
-                    </ul>
+                                <Link className="nav-link" to="/preguntas"><i className='fa fa-user-times'></i>Gestionar preguntas</Link>
+                             </li>
+                        <li className="nav-item">
+                    <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>  Salir</Link>
+                        </li>
+                             </ul>
+                        ):(<span></span>)
+
+                        }
+                 {rol1 === "estudiante" ? (
+                    <ul className="navbar-nav"> 
+                             <li className="nav-item">
+                                <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>Entrenar competencia</Link>
+                             </li>
+                             <li className="nav-item">
+                                <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>Entrenar varias competencias</Link>
+                             </li>
+                             <li className="nav-item">
+                                <Link className="nav-link" to="/resultadostc"><i className='fa fa-user-times'></i>Resultados competencias</Link>
+                             </li>
+                             <li className="nav-item">
+                            <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>  Salir</Link>
+                        </li>
+                             </ul>
+                        ):(<span></span>)
+
+                        } 
+                      {rol1 === "" ? (
+                        <ul className="navbar-nav">                         
+                        </ul>
+                        ):(<span></span>)
+
+                        }                                                         
                 </div>
 
       

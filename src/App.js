@@ -6,6 +6,10 @@ import Registro from './components/Registro';
 import Usuarios from './components/Usuarios';
 import Login from './components/Login';
 import Landing from './components/Landing';
+import Preguntas from './components/Preguntas';
+import Resultadostc from './components/Resultadostc';
+
+
 
 
 function App() {
@@ -18,6 +22,9 @@ function App() {
           <Route  path='/login' exact component={Login} />
           <Route  path='/registrar' exact component={Registro} />
           <Route  path='/usuarios' exact component={Usuarios} />
+          <Route  path='/preguntas' exact component={Preguntas} />
+          <Route  path='/resultadostc' exact component={Resultadostc} />
+          
     </Router>
   );
 }
