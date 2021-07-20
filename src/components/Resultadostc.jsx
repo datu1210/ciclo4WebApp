@@ -45,7 +45,11 @@ export default function Resultadostc() {
           <div className='header'>
             <h4 className='title'>Resultados competencias</h4>
         </div>
+        <div className="container">
+         <div className="col-md-8">
           <Bar data={data} options={options} />
+        </div>
+        </div> 
             
        </div>
     )

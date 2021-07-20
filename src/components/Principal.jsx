@@ -3,7 +3,7 @@ import practica from '../img/practica.jpg'
 import prueba from '../img/prueba.png'
 import resultados from '../img/resultados.jpg'
 import Nav from './Nav';
-import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
+
 
 export default function Principal() {
     return (

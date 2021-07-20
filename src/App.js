@@ -1,6 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import Registro from './components/Registro';
 import Usuarios from './components/Usuarios';
@@ -10,6 +9,7 @@ import Preguntas from './components/Preguntas';
 import Resultadostc from './components/Resultadostc';
 import Competencia from './components/Competencia';
 import Principal from './components/Principal';
+
 
 
 
