@@ -55,10 +55,7 @@ const rol1="profesor"
                     <ul className="navbar-nav"> 
                              <li className="nav-item">
                                 <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>Entrenar competencia</Link>
-                             </li>
-                             <li className="nav-item">
-                                <Link className="nav-link" to="/"><i className='fa fa-user-times'></i>Entrenar varias competencias</Link>
-                             </li>
+                             </li>                             
                              <li className="nav-item">
                                 <Link className="nav-link" to="/resultadostc"><i className='fa fa-user-times'></i>Resultados competencias</Link>
                              </li>

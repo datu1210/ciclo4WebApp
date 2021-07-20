@@ -267,21 +267,21 @@ export default function Landing() {
                 consequatur sit omnis saepe expedita, quibusdam numquam
                 consectetur minus tempora delectus.
               </p>
-              <p>@2019 render2web. Todos los derechos reservador</p>
+              <p>@2021. Todos los derechos reservados</p>
             </div>
 
             <div className="col-sm-12 col-md-4 tex-center text-white">
               <h3 className="mt-5">Contáctanos</h3>
               <p className="mt-5">
                 <i className="fas fa-map-marker-alt"></i>
-                Calle 52 b # 325-963 - Pereira/Colombia
+                 Avenida Siempre Viva 123
                 <br /><br />
                 <i className="fas fa-phone"></i>
                 57 5555555
               </p>
             </div>
 
-         {/*   <div class="col-sm-12 col-md-4 tex-center text-white">
+           <div class="col-sm-12 col-md-4 tex-center text-white">
               <h3 class="mt-5">Suscríbete</h3>
               <form>
                 <div class="form-group">
@@ -305,11 +305,11 @@ export default function Landing() {
                   Suscríbete
                 </button>
               </form>
-            </div>*/}
+            </div>
           </div>
         </div>
-      </section>
-    </footer>
+     </section>
+     </footer>
 </div>
     )
 }

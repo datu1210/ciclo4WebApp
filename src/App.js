@@ -8,6 +8,8 @@ import Login from './components/Login';
 import Landing from './components/Landing';
 import Preguntas from './components/Preguntas';
 import Resultadostc from './components/Resultadostc';
+import Competencia from './components/Competencia';
+import Principal from './components/Principal';
 
 
 
@@ -25,6 +27,8 @@ function App() {
           <Route  path='/usuarios' exact component={Usuarios} />
           <Route  path='/preguntas' exact component={Preguntas} />
           <Route  path='/resultadostc' exact component={Resultadostc} />
+          <Route  path='/competencia' exact component={Competencia} />
+          <Route  path='/principal' exact component={Principal} />
           
     </Router>
   );
