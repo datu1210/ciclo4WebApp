@@ -50,7 +50,9 @@ export default function Preguntas() {
                                         <th>#</th>
                                         <th>Encabezado</th>
                                         <th>Puntaje</th>
-                                        <th>Categoría competencia</th>                                        
+                                        <th>Categoría competencia</th>
+                                        <th>Editar</th>
+                                        <th>Desactivar</th>                                        
                                     </tr>
                                 </thead>
                                 <tbody>                                                                           
@@ -63,6 +65,12 @@ export default function Preguntas() {
                                                                                                                                                                             
                                                     <Link className='btn btn-danger mr-1' to='/'>Editar</Link>
 
+                                                </td>
+                                                <td>
+                                                      <label className="switch">
+                                                        <input type="checkbox" />
+                                                        <span class="slider round"></span>
+                                                        </label>
                                                 </td>
                                             </tr>                                                                        
                                 </tbody>

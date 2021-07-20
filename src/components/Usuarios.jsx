@@ -55,7 +55,8 @@ export default function Usuarios() {
                                         <th>Apellidos</th>
                                         <th>Identificación</th>
                                         <th>Correo</th>
-                                        <th>Opciones</th>
+                                        <th>Editar</th>
+                                        <th>Desactivar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -68,10 +69,16 @@ export default function Usuarios() {
                                                 <td>11117777</td>
                                                 <td>felipe@gmail.com</td>
                                                 <td>
-                                                    <button className='btn btn-warning mr-1' >Eliminar</button>
                                                     <Link className='btn btn-danger mr-1' to='/'>Editar</Link>
-
                                                 </td>
+                                                <td>        
+                                                    
+                                                <label className="switch">
+                                                        <input type="checkbox" />
+                                                        <span class="slider round"></span>
+                                                        </label>
+                                                </td>
+                                                
                                             </tr>
 
                                         
