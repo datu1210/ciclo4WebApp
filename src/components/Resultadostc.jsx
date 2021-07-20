@@ -1,5 +1,6 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2';
+import Nav from './Nav';
 
 
 
@@ -40,8 +41,9 @@ export default function Resultadostc() {
   };
     return (
         <div>
+          <Nav/>
           <div className='header'>
-            <h1 className='title'>Resultados competencias</h1>
+            <h4 className='title'>Resultados competencias</h4>
         </div>
           <Bar data={data} options={options} />
             

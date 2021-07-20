@@ -1,4 +1,5 @@
 import React from 'react'
+import Nav from './Nav';
 
 
 export default function Login() {
@@ -6,7 +7,10 @@ export default function Login() {
 
 
     return (
+    <div>
+    <Nav/>
     <div className="container mt-4">
+        
             <div className="row">
                 <div className="col-md-6 mx-auto">
                    <div className="card">
@@ -39,7 +43,7 @@ export default function Login() {
             </div>
         </div>
     </div>
-
+</div>
     
     )
 }

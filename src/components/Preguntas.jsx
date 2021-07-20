@@ -1,9 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Nav from './Nav';
 
 export default function Preguntas() {
     return (
         <div>
+            <Nav/>
             <header className='py-2 bg-primary text-white'>
                 <div className="container">
                     <div className="row">
