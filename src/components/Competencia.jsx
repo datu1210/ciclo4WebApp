@@ -24,7 +24,7 @@ export default function Competencia() {
           <div className="card" >
             <img src={quimica} height="90px  " width="68px" className="card-img-top" alt="quimica"></img>
             <div className="card-body">
-              <h5 className="card-title">Química</h5>
+              <h5 className="card-title">Razonamiento cuantitativo</h5>
               <button className="btn btn-outline-success btn-sm">Empieza ahora</button>
             </div>
           </div>
@@ -33,7 +33,7 @@ export default function Competencia() {
           <div className="card"  >
             <img src={matematicas} height="90px  " width="68px" className="card-img-top" alt="matematica"></img>
             <div className="card-body">
-              <h5 className="card-title">Matemáticas</h5>
+              <h5 className="card-title">Inglés</h5>
               <button className="btn btn-outline-success btn-sm">Empieza ahora</button>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function Competencia() {
           <div className="card" >
             <img src={historia} height="90px  " width="68px" className="card-img-top" alt="historia"></img>
             <div className="card-body">
-              <h5 className="card-title">Historia</h5>
+              <h5 className="card-title">Lectura crítica</h5>
               <button className="btn btn-outline-success btn-sm">Empieza ahora</button>
             </div>
           </div>
@@ -53,28 +53,10 @@ export default function Competencia() {
           <div className="card" >
             <img src={sociales} height="90px" width="68px" className="card-img-top" alt="sociales"></img>
             <div className="card-body">
-              <h5 className="card-title">Ciencias Sociales</h5>
+              <h5 className="card-title">Competencias ciudadanas</h5>
               <button className="btn btn-outline-success btn-sm">Empieza ahora</button>
             </div>
-          </div>
-          <div className="col-sm-4">
-            <div className="card"  >
-              <img src={naturales} height="90px" width="68px" className="card-img-top" alt="biologia"></img>
-              <div className="card-body">
-                <h5 className="card-title">Ciencias Naturales</h5>
-                <button className="btn btn-outline-success btn-sm">Empieza ahora</button>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-4">
-            <div className="card" >
-              <img src={ingles} height="90px" width="68px" className="card-img-top" alt="ingles"></img>
-              <div className="card-body">
-                <h5 className="card-title">Inglés</h5>
-                <button className="btn btn-outline-success btn-sm">Empieza ahora</button>
-              </div>
-            </div>
-          </div>
+          </div>             
         </div>
       </div>
     </div>
