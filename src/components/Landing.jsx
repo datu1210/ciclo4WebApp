@@ -1,5 +1,4 @@
 import React from "react";
-import trainpro from "../img/TrainPro.png";
 import americano from "../img/americano.png";
 import concejo from "../img/concejo.png";
 import cumbres from "../img/cumbres.png";
@@ -7,82 +6,18 @@ import lasallebog from "../img/la-salle-bog.png";
 import Jovenes from "../img/Jovenes.jpg";
 import MinEducación_Colombia_logo from "../img/MinEducación_Colombia_logo.png";
 import sanviator from "../img/san-viator.png";
+import Footer from "./Footer.jsx";
 
 import "./Landing.css";
 
+import Nav from './Nav';
+
 export default function Landing() {
   return (
-    <div>
-      <nav
-        className="navbar navbar-expand-lg navbar-light fondo-nav sticky-top"
-        style={{background:"white"}}
-        id="menu-navegacion"
-      >
-        <div className="container my-1">
-          <a href="index.html" className="navbar-bran">
-            <img
-              src={trainpro}
-              alt=""
-              className="img-fluid"
-              height="150px"
-              width="150px"
-            />
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <a href="#inicio active" className="nav-link">
-                  Inicio
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#intro" className="nav-link">
-                  Empresa
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#servicios" className="nav-link">
-                  Servicios
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#testimonios" className="nav-link">
-                  Testimonios
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#footer" className="nav-link">
-                  Contacto
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="login" className="nav-link">
-                  Iniciar sesión
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
+    <>
+    <Nav/>
       <section id="inicio" className="text-center">
-        <div
-          id="sliderCaption"
-          className="carousel slide"
-          data-ride="carousel"
-        >
+        <div id="sliderCaption" className="carousel slide" data-ride="carousel">
           <ol className="carousel-indicators">
             <li
               className="active"
@@ -96,7 +31,7 @@ export default function Landing() {
           <div className="carousel-inner">
             {/* imagenes */}
             <div className="carousel-item active">
-              <img className="img-fluid" src={Jovenes} alt="Jovenes-Train" />
+              <img className="img-fluid w-100" src={Jovenes} alt="Jovenes-Train"/>
               <div class="carousel-caption d-none d-md-block">
                 <h2>Dispositiva 1</h2>
                 <p>
@@ -125,7 +60,7 @@ export default function Landing() {
       </section>
 
       <section id="llamado-accion-1">
-        <div className="container p-3"  >
+        <div className="container p-3">
           <div className="row">
             <div className="col-sm-12 col-md-12 text-center">
               <h5 id="action1-color" className="p-5">
@@ -211,31 +146,57 @@ export default function Landing() {
           <h1 className="mt-5 mb-5 text-center">Thumbnail Gallery</h1>
 
           <div className="row text-center text-lg-left">
-            <div className="col-lg-3 col-md-4 col-6">
+            <div className="col-sm-12 col-md-4">
               <img
-                className="img-fluid card-img-top"
+                className="img-fluid"
                 src={americano}
                 alt="Colegio_Americano"
+                height="130px"
+                width="130px"
               />
             </div>
-            <div className="col-lg-3 col-md-4 col-6">
-              <img className="img-fluid" src={concejo} alt="Colegio_Concejo" />
+            <div className="col-sm-12 col-md-4">
+              <img className="img-fluid" 
+                src={concejo} 
+                alt="Colegio_Concejo" 
+                height="400px"
+                width="400px"
+              />
             </div>
-            <div className="col-lg-3 col-md-4 col-6">
-              <img className="img-fluid " src={cumbres} alt="" />
+            <div className="col-sm-12 col-md-4">
+              <img className="img-fluid " 
+                src={cumbres} 
+                alt="" 
+                height="150px"
+                width="150px"              
+              />
             </div>
-            <div className="col-lg-3 col-md-4 col-6">
-              <img className="img-fluid" src={lasallebog} alt="" />
+          </div>
+          <div className="row text-center text-lg-left mt-5">
+            <div className="col-sm-12 col-md-4">
+              <img className="img-fluid" 
+                src={lasallebog} 
+                alt=""  
+                height="150px"
+                width="150px"
+              />
             </div>
-            <div className="col-lg-3 col-md-4 col-6">
+            <div className="col-sm-12 col-md-4">
               <img
                 className="img-fluid"
                 src={MinEducación_Colombia_logo}
                 alt=""
+                // height="150px"
+                // width="150px"                
               />
             </div>
-            <div className="col-lg-3 col-md-4 col-6">
-              <img className="img-fluid" src={sanviator} alt="" />
+            <div className="col-sm-12 col-md-4">
+              <img className="img-fluid" 
+                src={sanviator} 
+                alt=""  
+                // height="150px"
+                // width="150px"
+              />
             </div>
           </div>
         </div>
@@ -278,61 +239,8 @@ export default function Landing() {
         </div>
       </section>
 
-      <footer>
-        <section id="footer">
-          <div className="container py-3">
-            <div className="row mt-5">
-              <div className="col-sm-12 col-md-4 tex-center text-white">
-                <h3 className="mt-5">Nosotros</h3>
-                <p className="mt-5">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Culpa consequatur sit omnis saepe expedita, quibusdam numquam
-                  consectetur minus tempora delectus.
-                </p>
-                <p>@2021. Todos los derechos reservados</p>
-              </div>
-
-              <div className="col-sm-12 col-md-4 tex-center text-white">
-                <h3 className="mt-5">Contáctanos</h3>
-                <p className="mt-5">
-                  <i className="fas fa-map-marker-alt"></i>
-                  Avenida Siempre Viva 123
-                  <br />
-                  <br />
-                  <i className="fas fa-phone"></i>
-                  57 5555555
-                </p>
-              </div>
-
-              <div class="col-sm-12 col-md-4 tex-center text-white">
-                <h3 class="mt-5">Suscríbete</h3>
-                <form>
-                  <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Ingresa tu nombre"
-                    />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Ingresa tu email"
-                    />
-                  </div>
-                  <button type="submit" class="btn btn-primary">
-                    Suscríbete
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-      </footer>
-    </div>
+      <Footer></Footer>
+    </>
   );
 }
+

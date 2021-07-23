@@ -4,8 +4,6 @@ import Nav from './Nav';
 
 export default function Login() {
 
-
-
     return (
     <div>
     <Nav/>
