@@ -1,0 +1,12 @@
+.btnPreguntaSiguiente,
+.btnPreguntaSiguiente,:visited
+{
+    background-color: #ffffff !important;
+    border-color: #97f425 !important;
+    border-width: 2px !important;
+    color: white !important;
+}
+.btnPreguntaSiguiente,:hover
+{
+    background-color: #214189 !important;  
+}

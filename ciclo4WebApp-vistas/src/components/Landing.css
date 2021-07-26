@@ -1,0 +1,26 @@
+body {
+    font-size: 1.2rem;
+  }
+
+#llamado-accion-1 {
+    background:#214189;
+    
+}
+
+#action1-color{
+    color:#ff7f00;
+}
+
+#about {
+    background-image: url(../img/grado2.jpg);
+   }
+
+#btn-about {
+    color: white;
+    font-weight: bold;
+    background-color: #ccdb18;
+  }
+
+#footer {
+    background: #1e88eb;
+  }
