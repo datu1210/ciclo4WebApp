@@ -86,6 +86,24 @@ UsuarioCtrl.desactivar=async(req,res)=>{
 
 }
 
+UsuarioCtrl.listar=async(req,res)=>{
+    const respuesta=await Usuario.find()
+    res.json(respuesta)
 
+}
+
+UsuarioCtrl.buscarusuario=async(req,res)=>{
+	const nombres=req.params.nombres
+	const respuesta=await Usuario.find({nombres:{$regex:".*"+nombres+".*"}})	
+	res.json(respuesta) 
+
+}
+
+UsuarioCtrl.listarid=async(req,res)=>{
+	const id=req.params.id
+	const respuesta=await Usuario.findById({_id:id})
+	res.json(respuesta) 
+
+}
 
 module.exports=UsuarioCtrl

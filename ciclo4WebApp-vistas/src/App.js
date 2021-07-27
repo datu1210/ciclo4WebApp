@@ -11,6 +11,7 @@ import Resultadostc from './components/Resultadostc';
 import Competencia from './components/Competencia';
 import Principal from './components/Principal';
 import Pregunta from './components/Pregunta';
+import EditarUsuario from './components/EditarUsuario';
 
 
 
@@ -31,6 +32,7 @@ function App() {
           <Route  path='/competencia' exact component={Competencia} />
           <Route  path='/principal' exact component={Principal} />
           <Route  path='/pregunta' exact component={Pregunta} />
+          <Route  path='/editarusuario/:id' exact component={EditarUsuario} />
           
     </Router>
   );

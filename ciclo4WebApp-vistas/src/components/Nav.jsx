@@ -218,6 +218,9 @@ export default function Nav() {
                                                 <Link className="nav-link mx-1" to="/usuarios"> Gestionar usuarios</Link>
                                             </li>
                                             <li className="nav-item">
+                                                <Link className="nav-link mx-1" to="/estudiantes"> Gestionar estudiantes</Link>
+                                            </li>
+                                            <li className="nav-item">
                                                 <Link className="nav-link mx-1" to="/preguntas"> Gestionar preguntas</Link>
                                             </li>
                                         </ul>
