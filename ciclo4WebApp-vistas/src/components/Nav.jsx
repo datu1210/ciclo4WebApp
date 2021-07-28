@@ -225,6 +225,7 @@ export default function Nav() {
                                             </li>
                                         </ul>
                                     ) :
+                                    
                                     (
                                         // Dropdown si es profesor
                                         rol1 === "Profesor" ?

@@ -2,9 +2,9 @@ const PreguntaCtrl={}
 const Pregunta=require('../models/Pregunta.model')
 
 PreguntaCtrl.crearPregunta=async(req,res)=>{
-    const {encabezado,puntaje, categoria, estado, respuestas}=req.body
+    const {encabezado,puntaje, competencias, estado, respuestaA, respuestaB, respuestaC, respuestaD, correcta}=req.body
     const NuevaPregunta = new Pregunta({
-        encabezado,puntaje, categoria, estado, respuestas
+        encabezado,puntaje, competencias, estado, respuestaA, respuestaB, respuestaC, respuestaD, correcta
     })
 
     const respuesta=await NuevaPregunta.save()
@@ -70,6 +70,11 @@ PreguntaCtrl.desactivar=async(req,res)=>{
         }) 
 
 }
+PreguntaCtrl.listarid=async(req,res)=>{
+	const id=req.params.id
+	const respuesta=await Pregunta.findById({_id:id})
+	res.json(respuesta) 
 
+}
 
 module.exports=PreguntaCtrl

@@ -12,7 +12,9 @@ import Competencia from './components/Competencia';
 import Principal from './components/Principal';
 import Pregunta from './components/Pregunta';
 import EditarUsuario from './components/EditarUsuario';
-
+import Estudiantes from './components/Estudiantes';
+import EditarEstudiante from './components/EditarEstudiante';
+import EditarPregunta from './components/EditarPregunta';
 
 
 
@@ -33,6 +35,9 @@ function App() {
           <Route  path='/principal' exact component={Principal} />
           <Route  path='/pregunta' exact component={Pregunta} />
           <Route  path='/editarusuario/:id' exact component={EditarUsuario} />
+          <Route  path='/estudiantes' exact component={Estudiantes} />
+          <Route  path='/editarestudiante/:id' exact component={EditarEstudiante} />
+          <Route  path='/editarpregunta/:id' exact component={EditarPregunta} />
           
     </Router>
   );

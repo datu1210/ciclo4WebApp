@@ -61,6 +61,8 @@ UsuarioCtrl.login= async(req, res)=>{
 
 UsuarioCtrl.actualizar=async(req,res)=>{
 	const id=req.params.id
+	req.body.contrasena=await bcrypt.hash(req.body.contrasena,10) 
+	/* await bcrypt.hash(req.body.contrasena,10)  */
 	await Usuario.findByIdAndUpdate({_id:id},req.body)
 	res.json({
 		mensaje:'Usuario actualizado'

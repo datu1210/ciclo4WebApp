@@ -20,7 +20,7 @@ EstudianteCtrl.crearEstudiante=async(req,res)=>{
         const token=jwt.sign({_id:NuevoEstudiante._id},'secreta')
         await NuevoEstudiante.save()
         res.json({
-            mensaje:'Bienvenido',
+            mensaje:'Estudiante Creado',
             id:NuevoEstudiante._id,
             nombres:NuevoEstudiante.nombres,
             apellidos:NuevoEstudiante.apellidos,
@@ -40,6 +40,7 @@ EstudianteCtrl.listar=async(req,res)=>{
 
 EstudianteCtrl.actualizar=async(req,res)=>{
 	const id=req.params.id
+    req.body.contrasena=await bcrypt.hash(req.body.contrasena,10)
 	await Estudiante.findByIdAndUpdate({_id:id},req.body)
 	res.json({
 		mensaje:'Estudiante actualizado'
@@ -81,6 +82,10 @@ EstudianteCtrl.login= async(req, res)=>{
         })
 
     }
+
+
+
+
     const match = await bcrypt.compare(contrasena,estudiante.contrasena)
     if(match){
 	const token=jwt.sign({_id:estudiante._id},'secreta')
@@ -99,6 +104,14 @@ EstudianteCtrl.login= async(req, res)=>{
 		mensaje:'Contraseña incorrecta',		
         })
       }
+}
+
+
+EstudianteCtrl.listarid=async(req,res)=>{
+	const id=req.params.id
+	const respuesta=await Estudiante.findById({_id:id})
+	res.json(respuesta) 
+
 }
 
 module.exports=EstudianteCtrl

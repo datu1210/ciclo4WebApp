@@ -4,14 +4,13 @@ const {Schema} = mongoose
 const PreguntaSchema = new Schema({
 	encabezado:String,
   puntaje:Number,
-	categoria:String,
+	competencias:String,
 	estado:Number,
-    respuestas : [{
-        opcion : String,
-        correcta : Number
-         }    
-        ]
-    
+  respuestaA: String,  
+  respuestaB: String,  
+  respuestaC: String,  
+  respuestaD: String,  
+  correcta: String
 })
 module.exports= mongoose.model('pregunta',PreguntaSchema)
 

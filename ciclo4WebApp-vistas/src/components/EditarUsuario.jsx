@@ -95,11 +95,11 @@ export default function EditarUsuario(props) {
                             </div>
                             <div className="mb-3">
                                 <label className='form-label'> Contraseña</label>
-                                <input type='text' className='form-control' value={contrasena} requiredonChange={(e) => setContrasena(e.target.value)} />
+                                <input type='text' className='form-control' required onChange={(e) => setContrasena(e.target.value)} />
                             </div>
                             <div className="mb-3">
                                 <label className='form-label'> estado</label>
-                                <input type='number' className='form-control' value={estado} requiredonChange={(e) => setEstado(e.target.value)} />
+                                <input type='number' className='form-control' value={estado} required onChange={(e) => setEstado(e.target.value)} />
                             </div>
                             <div className="mb-3">
                                 <button className='btn btn-primary' type='submit'>Guardar</button>
