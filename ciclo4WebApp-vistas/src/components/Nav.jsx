@@ -110,7 +110,6 @@ export default function Nav() {
     var salir = () => {
         sessionStorage.clear()
         window.location.href = '/Landing'
-        alert("Ejecutando salir")
     }
     if (Usuario.tipoUsuario === null) {
         var rol1 = "Visitante"

@@ -13,7 +13,8 @@ router.get('/listar',PreguntaCtrl.listar)
 router.get('/buscarpreguntaencaycat/:encabezado',PreguntaCtrl.buscarpreguntaencaycat)
 router.put('/actualizar/:id',PreguntaCtrl.actualizar)
 router.get('/listarid/:id',PreguntaCtrl.listarid)
-
+router.get('/buscarpregsest/',PreguntaCtrl.buscarpregsest)
+router.get('/buscarpregsestcat',PreguntaCtrl.buscarpregsestcat)
 
 
 module.exports=router

@@ -14,8 +14,7 @@ export default function Usuarios() {
     const [contrasena, setContrasena] = useState('')
     const [rol, setRoles] = useState([])
     const [rolSelect, setRolSelect] = useState('')
-
-
+    const [displayModal, setDisplayModal] = useState(false);
     useEffect(() => {
         obtenerUsuarios()
         setRoles(['Administrador', 'Profesor'])
@@ -31,6 +30,7 @@ export default function Usuarios() {
             })
         //console.log(respuesta.data)
         setUsuarios(respuesta.data)
+        console.log(respuesta.data)
     }
 
     const guardar = async (e) => {

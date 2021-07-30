@@ -13,7 +13,6 @@ PreguntaCtrl.crearPregunta=async(req,res)=>{
 	    respuesta
 })
 }
-
 PreguntaCtrl.listar=async(req,res)=>{
     const respuesta=await Pregunta.find()
     res.json(respuesta)
@@ -74,6 +73,23 @@ PreguntaCtrl.listarid=async(req,res)=>{
 	const id=req.params.id
 	const respuesta=await Pregunta.findById({_id:id})
 	res.json(respuesta) 
+
+}
+
+PreguntaCtrl.buscarpregsest=async(req,res)=>{
+	
+	const ids=req.params.ids
+	const respuesta = await Pregunta.find({ '_id': { $nin: ids } }).limit(15);
+	res.json(respuesta)
+
+}
+
+PreguntaCtrl.buscarpregsestcat=async(req,res)=>{
+	const ids=req.params.ids
+	//const competencias="Competencias Ciudadanas"
+	const competencias=req.params.competencias
+	const respuesta = await Pregunta.find({ '_id': { $nin: ids } ,'competencias':competencias}).limit(15);
+	res.json(respuesta)
 
 }
 
