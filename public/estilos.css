@@ -1,0 +1,42 @@
+/*Estilos personalizados*/
+body {
+    font-size: 1.2rem;
+  }
+  
+  .fondo-nav {
+    background: #ffffff !important;
+  }
+  
+  #inicio {
+    background: url("../img/Jovenes.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .display {
+    color: #1e88eb;
+  }
+  
+  #btn-about {
+    color: white;
+    font-weight: bold;
+    background-color: #97f425;
+  }
+  
+  .jumbotron {
+    width: 100%;
+    height: 500px;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    padding-top: 60px;
+  }
+  
+  #about {
+    background: url("../img/grado2.jpg");
+    background-size: cover;
+  }
+  
+  #footer {
+    background: #1e88eb;
+  }
+  
