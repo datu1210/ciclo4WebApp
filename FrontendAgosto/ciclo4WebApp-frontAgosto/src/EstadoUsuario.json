@@ -1,0 +1,10 @@
+{
+    "Usuario":
+    {
+        "tipoUsuario": "Admin",
+        "organizacion": "OrganizacionX",
+        "nombre": "Nombre",
+        "apellidos": "Apellido"
+    }
+    
+}
