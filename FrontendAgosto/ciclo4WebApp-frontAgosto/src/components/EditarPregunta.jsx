@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
 import Nav from './Nav';
@@ -31,7 +31,7 @@ export default function EditarPregunta(props) {
         const id = props.match.params.id
         const token = sessionStorage.getItem('token')
         const respuesta = await Axios.get('http://localhost:4000/pregunta/listarid/' + id, {
-            headers: { 'autorizacion': token }
+            headers: {'autorizacion': token }
         })
         setEncabezado(respuesta.data.encabezado)
         setPuntaje(respuesta.data.puntaje)
@@ -60,7 +60,7 @@ export default function EditarPregunta(props) {
             estado: 1
         }
         const respuesta = await Axios.put('http://localhost:4000/pregunta/actualizar/' + id, pregunta, {
-            headers: { 'autorizacion': token }
+            headers: {'autorizacion': token }
         })
         const mensaje = respuesta.data.mensaje
         Swal.fire({
@@ -76,72 +76,112 @@ export default function EditarPregunta(props) {
     return (
         <div>
             <Nav />
-            <div className="container">
-            <form onSubmit={actualizar}>
+            <div className = "container">
+                <form onSubmit = {actualizar}>
 
-                            <div className="mb-3">
-                                <label> Encabezado </label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required value={encabezado}  onChange={(e) => setEncabezado(e.target.value)}></textarea>
-                            </div>
+                    <div className = "mb-3">
+                        <label> Encabezado </label>
+                        <textarea 
+                            class = "form-control" 
+                            id = "exampleFormControlTextarea1" 
+                            rows = "3" 
+                            required 
+                            value = {encabezado} 
+                            onChange = {(e) => setEncabezado(e.target.value)}
+                        >
+                        </textarea>
+                    </div>
 
-                            <div className="mb-3">
-                                <label className='form-label'> Opción A. </label>
-                                <input type='text' className='form-control' required value={respuestaA} onChange={(e) => setRespuestaA(e.target.value)}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label className='form-label'> Opción B. </label>
-                                <input type='text' className='form-control' required value={respuestaB}  onChange={(e) => setRespuestaB(e.target.value)}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label className='form-label'> Opción C. </label>
-                                <input type='text' className='form-control' required value={respuestaC}  onChange={(e) => setRespuestaC(e.target.value)}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label className='form-label'> Opción D. </label>
-                                <input type='text' className='form-control' required value={respuestaD}  onChange={(e) => setRespuestaD(e.target.value)}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label className='form-label'>Competencia </label>
-                                <select className='form-control' required value={competenciasSelect}  onChange={(e) => setCompetenciasSelect(e.target.value)} >
-                                    {
-                                        competencias.map(competencias1 => (
-                                            <option key={competencias1}>
-                                                {competencias1}
-                                            </option>
-                                        ))
+                    <div className = "mb-3">
+                        <label className = 'form-label'> Opción A. </label>
+                        <input 
+                            type = 'text' 
+                            className = 'form-control' 
+                            required value = {respuestaA} 
+                            onChange = {(e) => setRespuestaA(e.target.value)}
+                        />
+                    </div>
+                    <div className = "mb-3">
+                        <label className = 'form-label'> Opción B. </label>
+                        <input 
+                            type = 'text' 
+                            className = 'form-control' 
+                            required 
+                            value = {respuestaB} 
+                            onChange = {(e) => setRespuestaB(e.target.value)}
+                        />
+                    </div>
+                    <div className = "mb-3">
+                        <label className = 'form-label'> Opción C. </label>
+                        <input 
+                            type = 'text' 
+                            className = 'form-control' 
+                            required 
+                            value = {respuestaC} 
+                            onChange = {(e) => setRespuestaC(e.target.value)}
+                        />
+                    </div>
+                    <div className = "mb-3">
+                        <label className = 'form-label'> Opción D. </label>
+                        <input 
+                            type = 'text' 
+                            className = 'form-control' 
+                            required 
+                            value = {respuestaD} 
+                            onChange = {(e) => setRespuestaD(e.target.value)}
+                        />
+                    </div>
+                    <div className = "mb-3">
+                        <label className = 'form-label'>Competencia </label>
+                        <select 
+                            className = 'form-control' 
+                            required 
+                            value = {competenciasSelect} 
+                            onChange = {(e) => setCompetenciasSelect(e.target.value)} 
+                        >
+                            {
+                                competencias.map(competencias1 => (
+                                    <option key = {competencias1}>
+                                        {competencias1}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                    </div>
 
-                                    }
-                                </select>
-                                </div>
+                    <div className = "mb-3">
+                        <label className = 'form-label'>Opción correcta </label>
+                        <select 
+                            className = 'form-control' 
+                            required 
+                            value = {correctaSelect} 
+                            onChange = {(e) => setCorrectaSelect(e.target.value)} 
+                        >
+                            {
+                                correcta.map(correcta1 => (
+                                    <option key = {correcta1}>
+                                        {correcta1}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                    </div>
 
-                            <div className="mb-3">
-                                <label className='form-label'>Opción correcta </label>
-                                <select className='form-control' required value={correctaSelect} onChange={(e) => setCorrectaSelect(e.target.value)} >
-                                    {
-                                        correcta.map(correcta1 => (
-                                            <option key={correcta1}>
-                                                {correcta1}
-                                            </option>
-                                        ))
+                    <div className = "mb-3">
+                        <label className = 'form-label'>Puntuación </label>
+                        <input 
+                            type = 'text' 
+                            className = 'form-control' 
+                            required 
+                            value = {puntaje} 
+                            onChange = {(e) => setPuntaje(e.target.value)}
+                        />
+                    </div>
 
-                                    }
-                                </select>
-                                </div>
-
-                            <div className="mb-3">
-                                <label className='form-label'>Puntuación </label>
-                                <input type='text' className='form-control' required value={puntaje}  onChange={(e) => setPuntaje(e.target.value)}
-                                />
-                            </div>
-
-                            <div className="mb-3">
-                                <button className='btn btn-primary' type='submit'>Actualizar</button>
-                            </div>
-                        </form>
+                    <div className = "mb-3">
+                        <button className = 'btn btn-primary' type = 'submit'>Actualizar</button>
+                    </div>
+                </form>
             </div>
         </div>
     )

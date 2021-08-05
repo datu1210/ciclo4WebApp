@@ -1,11 +1,12 @@
-const {Router}=require('express')
-const router=Router()
+const {Router} = require('express')
+const router = Router()
 
-const ResultadoCtrl=require('../controllers/Resultado.controller')
+const ResultadoCtrl = require('../controllers/Resultado.controller')
 
 
-router.post('/guardar', ResultadoCtrl.guardarResultado)
 router.get('/buscarresultadoest/:id', ResultadoCtrl.buscarresultadoest)
 
+router.post('/guardar', ResultadoCtrl.guardarResultado)
 
-module.exports=router
+
+module.exports = router

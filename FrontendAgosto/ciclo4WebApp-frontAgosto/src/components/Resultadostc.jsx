@@ -1,23 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import { Bar } from 'react-chartjs-2';
+import React, {useEffect, useState} from 'react'
+import {Bar} from 'react-chartjs-2';
 import Nav from './Nav';
 import Axios from 'axios'
 
 
-
-
 export default function Resultadostc() {
 
-  const [resRzCEstado, setResRzCEstado]=useState('')
-	const [resInglesEstado, setResInglesEstado]=useState('')
-  const [resLecCEstado, setResLecCEstado]=useState('')
-  const [resComCEstado, setResComCEstado]=useState('')
+  const [resRzCEstado, setResRzCEstado] = useState('')
+	const [resInglesEstado, setResInglesEstado] = useState('')
+  const [resLecCEstado, setResLecCEstado] = useState('')
+  const [resComCEstado, setResComCEstado] = useState('')
     
     useEffect(() => {
         obtenerResultado()
     }, [])
 
-    const obtenerResultado = async () =>{
+    const obtenerResultado = async () => {
       var resRzC = 0
       var resIngles = 0
       var resLecC = 0
@@ -25,22 +23,22 @@ export default function Resultadostc() {
       const id = sessionStorage.getItem('idusuario')
       const token = sessionStorage.getItem('token')
       const respuesta = await Axios.get('http://localhost:4000/resultado/buscarresultadoest/' + id, {
-          headers: { 'autorizacion': token }
+          headers: {'autorizacion': token}
       })
       if (respuesta === "") {
         console.log("Nunca he utilizado el simulador")
           }
           else {
             console.log("Se le tiene")
-            let arrayrespuestas=[]
+            // let arrayrespuestas = []
             respuesta.data.map((res, i) => {
               switch (res.pregunta.competencias) {
                 case 'Razonamiento Cuantitativo':
                   if (res.correcta === "1") {
                   resRzC = resRzC + (res.pregunta.puntaje)
                   console.log(resRzC)
-                }
-                break;
+                  }
+                  break;
 
                     // return (
                     //   console.log("rrrrrrrrrrrrrrrrr")
@@ -73,11 +71,12 @@ export default function Resultadostc() {
                   //   console.log("ccccccccccccc")
                   // )
                 default:
-                    // return (
-                    //   console.log("eeeeeeeeeeeeee")
-                    // )
+                    return (
+                      console.log("esto se imprime por defecto si no reconoce una competencia")
+                    )
              }
-             return (console.log("xxxxxxxxxxxxxxxxx"))
+            //  return (console.log("xxxxxxxxxxxxxxxxx"))
+             return (console.log(respuesta))
             })
 
             setResRzCEstado (resRzC)
@@ -120,18 +119,17 @@ export default function Resultadostc() {
       ],
     },
   };
-    return (
-        <div>
-          <Nav/>
-          <div className='header'>
-              <h4 className='title'>Resultados competencias</h4>
-          </div>
-          <div className="container">
-          <div className="col-md-8">
-            <Bar data={data} options={options} />
-          </div>
-          </div> 
-            
-       </div>
-    )
+  return (
+    <div>
+      <Nav/>
+      <div className = 'header m-5'>
+          <h4 className = 'title'>Resultados competencias</h4>
+      </div>
+      <div className = "container">
+        <div className = "col-md-8">
+          <Bar data = {data} options = {options} />
+        </div>
+      </div> 
+    </div>
+  )
 }

@@ -22,23 +22,23 @@ function App() {
   return (
     <Router>     
           
-          <Route path='/landing' exact component={Landing} />
-          {/*<Route path='/navegacion' exact component={Nav}/>*/}
-          {/*<Route path='/' exact component={Formulario}/>*/}
+          <Route path = '/landing' exact component = {Landing} />
+          {/*<Route path ='/navegacion' exact component = {Nav}/>*/}
+          {/*<Route path ='/' exact component = {Formulario}/>*/}
           
-          <Route  path='/login' exact component={Login} />
-          <Route  path='/registrar' exact component={Registro} />
-          <Route  path='/usuarios' exact component={Usuarios} />
-          <Route  path='/preguntas' exact component={Preguntas} />
-          <Route  path='/resultadostc' exact component={Resultadostc} />
-          <Route  path='/competencia' exact component={Competencia} />
-          <Route  path='/principal' exact component={Principal} />
-          <Route  path='/pregunta' exact component={Pregunta} />
-          <Route  path='/editarusuario/:id' exact component={EditarUsuario} />
-          <Route  path='/estudiantes' exact component={Estudiantes} />
-          <Route  path='/editarestudiante/:id' exact component={EditarEstudiante} />
-          <Route  path='/editarpregunta/:id' exact component={EditarPregunta} />
-          <Route  path='/responderpreguntas' exact component={Responderpreguntas} />
+          <Route  path = '/login' exact component = {Login} />
+          <Route  path = '/registrar' exact component = {Registro} />
+          <Route  path = '/usuarios' exact component = {Usuarios} />
+          <Route  path = '/preguntas' exact component = {Preguntas} />
+          <Route  path = '/resultadostc' exact component = {Resultadostc} />
+          <Route  path = '/competencia' exact component = {Competencia} />
+          <Route  path = '/principal' exact component = {Principal} />
+          <Route  path = '/pregunta' exact component = {Pregunta} />
+          <Route  path = '/editarusuario/:id' exact component = {EditarUsuario} />
+          <Route  path = '/estudiantes' exact component = {Estudiantes} />
+          <Route  path = '/editarestudiante/:id' exact component = {EditarEstudiante} />
+          <Route  path = '/editarpregunta/:id' exact component = {EditarPregunta} />
+          <Route  path = '/responderpreguntas' exact component = {Responderpreguntas} />
         
           
     </Router>

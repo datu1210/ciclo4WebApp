@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
 import Nav from './Nav';
@@ -47,7 +47,7 @@ export default function EditarEstudiante(props) {
             contrasena
         }
         const respuesta = await Axios.put('http://localhost:4000/estudiante/actualizar/' + id, estudiante, {
-            headers: { 'autorizacion': token }
+            headers: {'autorizacion': token }
         })
         const mensaje = respuesta.data.mensaje
         Swal.fire({
@@ -63,49 +63,81 @@ export default function EditarEstudiante(props) {
 
     return (
         <div>
-        <Nav />
-                <div className='container p-3 mt-4'>
-                    <form onSubmit={actualizar}>
-                        <div className="form-group">
-                            <label className='form-label'> Nombres </label>
-                            <input type='text' className='form-control' value={nombres} required onChange={(e) => setNombres(e.target.value)}
-                            />
-                        </div>
-                        <div className="mb-3">
-                            <label className='form-label'> Apellidos </label>
-                            <input type='text' className='form-control' value={apellidos} required onChange={(e) => setApellidos(e.target.value)}
-                            />
-                        </div>
-                        <div className="mb-3">
-                            <label className='form-label'>Programa</label>
-                            <select className='form-control' value={programa} required onChange={(e) => setProgramaSelect(e.target.value)} >
-                                {
-                                    programa.map(programa1 => (
-                                        <option key={programa1}>
-                                            {programa1}
-                                        </option>
-                                    ))
+            <Nav />
+            <div className = 'container p-3 mt-4'>
+                <form onSubmit = {actualizar}>
+                    <div className = "form-group">
+                        <label className = 'form-label'> Nombres </label>
+                        <input 
+                            type = 'text' 
+                            className = 'form-control' 
+                            value = {nombres} 
+                            required 
+                            onChange = {(e) => setNombres(e.target.value)}
+                        />
+                    </div>
+                    <div className = "mb-3">
+                        <label className = 'form-label'> Apellidos </label>
+                        <input 
+                            type = 'text' 
+                            className = 'form-control' 
+                            value = {apellidos} 
+                            required 
+                            onChange = {(e) => setApellidos(e.target.value)}
+                        />
+                    </div>
+                    <div className = "mb-3">
+                        <label className = 'form-label'>Programa</label>
+                        <select 
+                            className = 'form-control' 
+                            value = {programa} 
+                            required 
+                            onChange = {(e) => setProgramaSelect(e.target.value)} 
+                        >
+                            {
+                                programa.map(programa1 => (
+                                    <option key = {programa1}>
+                                        {programa1}
+                                    </option>
+                                ))
 
-                                }
-                            </select>
-                        </div>
-                        <div className="mb-3">
-                            <label className='form-label'> Correo</label>
-                            <input type='email' className='form-control' value={correo} required onChange={(e) => setCorreo(e.target.value)} />
-                        </div>
-                        <div className="mb-3">
-                            <label className='form-label'> Contraseña</label>
-                            <input type='text' className='form-control' required onChange={(e) => setContrasena(e.target.value)} />
-                        </div>
-                        <div className="mb-3">
-                            <label className='form-label'> estado</label>
-                            <input type='number' className='form-control' value={estado} required onChange={(e) => setEstado(e.target.value)} />
-                        </div>
-                        <div className="mb-3">
-                            <button className='btn btn-primary' type='submit'>Guardar</button>
-                        </div>
-                    </form>
-                </div>
-    </div>
+                            }
+                        </select>
+                    </div>
+                    <div className = "mb-3">
+                        <label className = 'form-label'> Correo</label>
+                        <input 
+                            type = 'email' 
+                            className = 'form-control' 
+                            value = {correo} 
+                            required 
+                            onChange = {(e) => setCorreo(e.target.value)} 
+                        />
+                    </div>
+                    <div className = "mb-3">
+                        <label className = 'form-label'> Contraseña</label>
+                        <input 
+                            type = 'text' 
+                            className = 'form-control' 
+                            required 
+                            onChange = {(e) => setContrasena(e.target.value)} 
+                        />
+                    </div>
+                    <div className = "mb-3">
+                        <label className = 'form-label'> estado</label>
+                        <input 
+                            type = 'number' 
+                            className = 'form-control' 
+                            value = {estado} 
+                            required 
+                            onChange = {(e) => setEstado(e.target.value)} 
+                        />
+                    </div>
+                    <div className = "mb-3">
+                        <button className = 'btn btn-primary' type = 'submit'>Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     )
 }
