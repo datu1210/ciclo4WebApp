@@ -11,6 +11,7 @@ router.get('/buscarpreguntaencaycat/:encabezado', PreguntaCtrl.buscarpreguntaenc
 router.get('/buscarpregsest', PreguntaCtrl.buscarpregsest)
 router.get('/listar', PreguntaCtrl.listar)
 router.get('/listarid/:id', PreguntaCtrl.listarid)
+router.get('/buscarpregsestcat', PreguntaCtrl.buscarpregsestcat)
 
 router.post('/crear', PreguntaCtrl.crearPregunta)
 

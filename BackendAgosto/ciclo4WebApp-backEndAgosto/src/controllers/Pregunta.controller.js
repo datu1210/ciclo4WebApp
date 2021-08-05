@@ -64,9 +64,9 @@ PreguntaCtrl.buscarpregsest = async(req, res)=>{
 
 /*Método para buscar preguntas de una competencia específica*/
 PreguntaCtrl.buscarpregsestcat = async(req, res)=>{
-	const ids = req.params
-	//const competencias="Competencias Ciudadanas"
-	const competencias = req.params.competencias
+	const ids = req.query.ids
+	const competencias = req.query.comp
+	console.log(competencias + "*****************")
 	const respuesta = await Pregunta.find({ '_id': { $nin: ids } , 'competencias': competencias}).limit(5);
 	res.json(respuesta)
 }

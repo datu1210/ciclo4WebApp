@@ -4,11 +4,12 @@ import Swal from 'sweetalert2'
 import Nav from './Nav';
 // import {Link} from 'react-router-dom'
 
-export default function Responderpreguntas() {
+export default function Responderpreguntas(props) {
 
     const [idsPreguntasRes, setIdsPreguntasRes] = useState([])
 	const [preguntasdes, setPreguntasdes] = useState([])
-    const [respuestas, setRespuestas] = useState([]);
+    const [respuestas, setRespuestas] = useState([])
+    var [preguntasR, setPreguntasR] = useState("");
     
     useEffect(() => {
         fetchData()        
@@ -16,6 +17,8 @@ export default function Responderpreguntas() {
 
     //async function fetchData(){
     const fetchData = async () => {
+        const comp = props.match.params.comp
+        console.log(comp)
         var qs = require('qs');
     
 		const id = sessionStorage.getItem('idusuario')
@@ -50,18 +53,47 @@ export default function Responderpreguntas() {
              
             //Esta consulta tiene un problema, ya que en el back no sabemos como procesar los ids
             //que se envían en la url!!!
-			const preguntasR = await Axios.get('http://localhost:4000/pregunta/buscarpregsest', {
-                headers: {'autorizacion': token},
-                params: {
-                    ids: arraypreguntas3
-                  },
-                paramsSerializer: params => {
-                    return qs.stringify(params)
-                    // return params
-                    // console.log(params.data)
-                  }
-            },
-            )
+            if (comp === "todasComp"){
+                preguntasR = await Axios.get('http://localhost:4000/pregunta/buscarpregsest', {
+                    headers: {'autorizacion': token},
+                    params: {
+                        ids: arraypreguntas3
+                      },
+                    paramsSerializer: params => {
+                        return qs.stringify(params)
+                        // return params
+                        // console.log(params.data)
+                      }
+                },
+                )
+            }
+            else{
+                preguntasR = await Axios.get('http://localhost:4000/pregunta/buscarpregsestcat', {
+                    headers: {'autorizacion': token},
+                    params: {
+                        ids: arraypreguntas3,
+                        comp: comp
+                      },
+                    paramsSerializer: params => {
+                        return qs.stringify(params)
+                        // return params
+                        // console.log(params.data)
+                      }
+                },
+                )
+            }
+			// const preguntasR = await Axios.get('http://localhost:4000/pregunta/buscarpregsest', {
+            //     headers: {'autorizacion': token},
+            //     params: {
+            //         ids: arraypreguntas3
+            //       },
+            //     paramsSerializer: params => {
+            //         return qs.stringify(params)
+            //         // return params
+            //         // console.log(params.data)
+            //       }
+            // },
+            // )
             setPreguntasdes(preguntasR.data)                              
 		}	
 	}
@@ -69,7 +101,7 @@ export default function Responderpreguntas() {
     const guardarRespuestas = async (e) => {
        
         e.preventDefault() 
-        //Esto es lo que contestó el estudiante   
+        //Esto es lo que contestó el estudiante
         const estudiante = sessionStorage.getItem('idusuario')
         const token = sessionStorage.getItem('token')
         let arrayresultados = []

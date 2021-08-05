@@ -38,7 +38,8 @@ function App() {
           <Route  path = '/estudiantes' exact component = {Estudiantes} />
           <Route  path = '/editarestudiante/:id' exact component = {EditarEstudiante} />
           <Route  path = '/editarpregunta/:id' exact component = {EditarPregunta} />
-          <Route  path = '/responderpreguntas' exact component = {Responderpreguntas} />
+          {/* <Route  path = '/responderpreguntas' exact component = {Responderpreguntas} /> */}
+          <Route  path = '/responderpreguntas/:comp' exact component = {Responderpreguntas} />
         
           
     </Router>

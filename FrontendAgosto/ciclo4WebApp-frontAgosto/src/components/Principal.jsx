@@ -32,7 +32,7 @@ return(
                             </img>
                             <div className = "card-body">
                                 <h5 className = "card-title">Todas las competencias</h5>                                
-                                <Link to = "/responderpreguntas">
+                                <Link to = {'/responderpreguntas/' + "todasComp"}>
                                     <button className = "btn btn-outline-success btn-sm mx-2">Empieza ahora</button>
                                 </Link>
                                 {/* <Link to = "/resultadostc">
@@ -52,7 +52,9 @@ return(
                             </img>
                             <div className = "card-body">
                                 <h5 className = "card-title">Razonamiento cuantitativo</h5>
-                                <button className = "btn btn-outline-success btn-sm mx-2" data-bs-toggle = "modal" data-bs-target = "#cuantitativo">Empieza ahora</button>
+                                <Link to = {'/responderpreguntas/' + "Razonamiento Cuantitativo"}>
+                                    <button className = "btn btn-outline-success btn-sm mx-2">Empieza ahora</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -67,7 +69,9 @@ return(
                             </img>
                             <div className = "card-body">
                                 <h5 className = "card-title">Inglés</h5>
-                                <button className = "btn btn-outline-success btn-sm mx-2" data-bs-toggle = "modal" data-bs-target = "#ingles">Empieza ahora</button>
+                                <Link to = {'/responderpreguntas/' + "Inglés"}>
+                                    <button className = "btn btn-outline-success btn-sm mx-2">Empieza ahora</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -82,7 +86,9 @@ return(
                             </img>
                             <div className = "card-body">
                                 <h5 className = "card-title">Lectura crítica</h5>
-                                <button className = "btn btn-outline-success btn-sm mx-2" data-bs-toggle = "modal" data-bs-target = "#critica">Empieza ahora</button>
+                                <Link to = {'/responderpreguntas/' + "Lectura Crítica"}>
+                                    <button className = "btn btn-outline-success btn-sm mx-2">Empieza ahora</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -97,7 +103,9 @@ return(
                             </img>
                             <div className = "card-body">
                                 <h5 className = "card-title">Competencias ciudadanas</h5>
-                                <button className = "btn btn-outline-success btn-sm mx-2" data-bs-toggle = "modal" data-bs-target = "#ciudadanas">Empieza ahora</button>
+                                <Link to = {'/responderpreguntas/' + "Competencias Ciudadanas"}>
+                                    <button className = "btn btn-outline-success btn-sm mx-2">Empieza ahora</button>
+                                </Link>
                             </div>
                         </div>
                     </div>	
