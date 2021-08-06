@@ -1,23 +1,25 @@
 const {Router} = require('express')
 const router = Router()
+const Auth = require('../helper/Auth')
 
 const PreguntaCtrl = require('../controllers/Pregunta.controller')
 
 
-router.get('/buscarpreguntaenca/:encabezado', PreguntaCtrl.buscarpreguntaenca)
-router.get('/buscarpreguntacat/:categoria', PreguntaCtrl.buscarpreguntacat)
-router.get('/buscarpregsestcat', PreguntaCtrl.buscarpregsestcat)
-router.get('/buscarpreguntaencaycat/:encabezado', PreguntaCtrl.buscarpreguntaencaycat)
-router.get('/buscarpregsest', PreguntaCtrl.buscarpregsest)
-router.get('/listar', PreguntaCtrl.listar)
-router.get('/listarid/:id', PreguntaCtrl.listarid)
-router.get('/buscarpregsestcat', PreguntaCtrl.buscarpregsestcat)
+router.get('/buscarpreguntaenca/:encabezado', Auth.verificartoken, PreguntaCtrl.buscarpreguntaenca)
+router.get('/buscarpreguntacat/:categoria', Auth.verificartoken, PreguntaCtrl.buscarpreguntacat)
+router.get('/buscarpregsestcat', Auth.verificartoken, PreguntaCtrl.buscarpregsestcat)
+router.get('/buscarpreguntaencaycat/:encabezado', Auth.verificartoken, PreguntaCtrl.buscarpreguntaencaycat)
+router.get('/buscarpregsest', Auth.verificartoken, PreguntaCtrl.buscarpregsest)
+router.get('/listar', Auth.verificartoken, PreguntaCtrl.listar)
+router.get('/listarid/:id', Auth.verificartoken, PreguntaCtrl.listarid)
+router.get('/buscarpregsestcat', Auth.verificartoken, PreguntaCtrl.buscarpregsestcat)
 
-router.post('/crear', PreguntaCtrl.crearPregunta)
+router.post('/crear', Auth.verificartoken, PreguntaCtrl.crearPregunta)
 
-router.put('/actualizar/:id', PreguntaCtrl.actualizar)
-router.put('/activar/:id', PreguntaCtrl.activar)
-router.put('/desactivar/:id', PreguntaCtrl.desactivar)
+
+router.put('/actualizar/:id', Auth.verificartoken, PreguntaCtrl.actualizar)
+router.put('/activar/:id', Auth.verificartoken, PreguntaCtrl.activar)
+router.put('/desactivar/:id', Auth.verificartoken, PreguntaCtrl.desactivar)
 
 
 module.exports = router

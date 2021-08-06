@@ -1,19 +1,21 @@
 const {Router} = require('express')
 const router = Router()
+const Auth = require('../helper/Auth')
 
 const UsuarioCtrl = require('../controllers/Usuario.controller')
 
 
-router.get('/buscarusuario/:nombres', UsuarioCtrl.buscarusuario)
-router.get('/listar/', UsuarioCtrl.listar)
-router.get('/listarid/:id', UsuarioCtrl.listarid)
+router.get('/buscarusuario/:nombres', Auth.verificartoken, UsuarioCtrl.buscarusuario)
+router.get('/listar/', Auth.verificartoken, UsuarioCtrl.listar)
+router.get('/listarid/:id', Auth.verificartoken, UsuarioCtrl.listarid)
 
 router.post('/login', UsuarioCtrl.login)
-router.post('/crear', UsuarioCtrl.crearUsuario)
+router.post('/crear', Auth.verificartoken, UsuarioCtrl.crearUsuario)
 
-router.put('/actualizar/:id', UsuarioCtrl.actualizar)
+router.put('/actualizar/:id', Auth.verificartoken, UsuarioCtrl.actualizar)
+// router.put('/activar/:id', Auth.verificartoken, UsuarioCtrl.activar)
 router.put('/activar/:id', UsuarioCtrl.activar)
-router.put('/desactivar/:id', UsuarioCtrl.desactivar)
+router.put('/desactivar/:id', Auth.verificartoken, UsuarioCtrl.desactivar)
 
 
 module.exports = router

@@ -71,6 +71,31 @@ export default function Usuarios() {
          })  
         setUsuarios(respuesta.data)
     }
+
+    const ActDes = async (e) => {
+        // const constEstado = (e.target.value).slice(-1)
+        // const id = (e.target.value).slice(0,-1)
+        e.preventDefault()
+        const id = (e.target.value)
+        // console.log(constEstado)
+        // console.log(id)
+        // console.log(e.target.value)
+        const token = sessionStorage.getItem('token')
+        
+        const respuesta = await Axios.put('http://localhost:4000/usuario/activar/' + id, {
+        // const respuesta = await Axios.put('http://localhost:4000/usuario/activar/' + id, constEstado, {
+            headers: {'autorizacion': token}
+        })
+        const mensaje = respuesta.data.mensaje
+        Swal.fire({
+            icon: 'success',
+            title: mensaje,
+            showConfirmButton: false
+        })
+        setTimeout(() => {
+            window.location.href = '/usuarios'
+        }, 3000)
+    }
     
 
     return (
@@ -147,11 +172,13 @@ export default function Usuarios() {
                                                         <td>
                                                             <button
                                                                 type = "button"
-                                                                class = "btn btn-outline-danger"
+                                                                className = "btn btn-outline-danger"
                                                                 data-bs-toggle = "button"
                                                                 autocomplete = "off"
+                                                                value = {usuario._id + usuario.estado}
+                                                                onClick = {(e) => ActDes(e)} 
                                                             >
-                                                                Desactivado
+                                                                Activar/Desactivar
                                                             </button>
                                                         </td>
                                                     </tr>

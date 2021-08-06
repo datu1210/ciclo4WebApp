@@ -17,12 +17,12 @@ export default function Principal(){
 return(
 	<>
             <Nav/>
-            <div className = "container py-5">
+            <div className = "container py-3">
 
-                <div className = "row pt-3" >
+                <div className = "row pt-3 w-75 mx-auto" >
 
-                    <div className = "col-sm-3 mt-3">
-                        <div className = "card" >
+                    <div className = "col-sm-4 mt-5 d-flex">
+                        <div className = "card shadow" >
                             <img 
                                 src = {practica} 
                                 className = "textoCentrado card-img-top" 
@@ -30,10 +30,10 @@ return(
                                 width = "40" 
                                 alt = "practica">
                             </img>
-                            <div className = "card-body">
+                            <div className = "card-body mx-auto">
                                 <h5 className = "card-title">Todas las competencias</h5>                                
                                 <Link to = {'/responderpreguntas/' + "todasComp"}>
-                                    <button className = "btn btn-outline-success btn-sm mx-2">Empieza ahora</button>
+                                    <button className = "btn btn-outline-success btn-sm mx-2 mx-auto">Empieza ahora</button>
                                 </Link>
                                 {/* <Link to = "/resultadostc">
                                     <button className = "btn btn-outline-success btn-sm mx-2">Ver resultados</button>
@@ -41,8 +41,8 @@ return(
                             </div>
                         </div>
                     </div>
-					<div className = "col-sm-3 mt-3">
-                        <div className = "card" >
+					<div className = "col-sm-4 mt-5 d-flex">
+                        <div className = "card shadow" >
                             <img 
                                 src = {quimica} 
                                 height = "200px" 
@@ -50,16 +50,16 @@ return(
                                 className = "card-img-top" 
                                 alt = "quimica">
                             </img>
-                            <div className = "card-body">
+                            <div className = "card-body mx-auto">
                                 <h5 className = "card-title">Razonamiento cuantitativo</h5>
                                 <Link to = {'/responderpreguntas/' + "Razonamiento Cuantitativo"}>
-                                    <button className = "btn btn-outline-success btn-sm mx-2">Empieza ahora</button>
+                                    <button className = "btn btn-outline-success btn-sm mx-2 mx-auto">Empieza ahora</button>
                                 </Link>
                             </div>
                         </div>
                     </div>
-					<div className = "col-sm-3 mt-3">
-                        <div className = "card"  >
+					<div className = "col-sm-4 mt-5 d-flex">
+                        <div className = "card shadow"  >
                             <img 
                                 src = {matematicas}
                                 height = "200px" 
@@ -67,16 +67,16 @@ return(
                                 className = "card-img-top" 
                                 alt = "matematica">
                             </img>
-                            <div className = "card-body">
-                                <h5 className = "card-title">Inglés</h5>
+                            <div className = "card-body mx-auto">
+                                <h5 className = "card-title min-vh-75">Inglés</h5>
                                 <Link to = {'/responderpreguntas/' + "Inglés"}>
-                                    <button className = "btn btn-outline-success btn-sm mx-2">Empieza ahora</button>
+                                    <button className = "btn btn-outline-success btn-sm mx-2 mx-auto">Empieza ahora</button>
                                 </Link>
                             </div>
                         </div>
                     </div>
-                    <div className = "col-sm-3 mt-3">
-                        <div className = "card" >
+                    <div className = "col-sm-4 mt-5 d-flex">
+                        <div className = "card shadow" >
                             <img 
                                 src = {historia} 
                                 height = "200px" 
@@ -84,16 +84,16 @@ return(
                                 className = "card-img-top" 
                                 alt = "historia">
                             </img>
-                            <div className = "card-body">
+                            <div className = "card-body mx-auto">
                                 <h5 className = "card-title">Lectura crítica</h5>
                                 <Link to = {'/responderpreguntas/' + "Lectura Crítica"}>
-                                    <button className = "btn btn-outline-success btn-sm mx-2">Empieza ahora</button>
+                                    <button className = "btn btn-outline-success btn-sm mx-2 mx-auto">Empieza ahora</button>
                                 </Link>
                             </div>
                         </div>
                     </div>
-                    <div className = "col-sm-3 mt-4">
-                        <div className = "card" >
+                    <div className = "col-sm-4 mt-5 d-flex">
+                        <div className = "card shadow" >
                             <img 
                                 src = {sociales} 
                                 height = "200px" 
@@ -101,10 +101,10 @@ return(
                                 className = "card-img-top" 
                                 alt="sociales">
                             </img>
-                            <div className = "card-body">
+                            <div className = "card-body mx-auto">
                                 <h5 className = "card-title">Competencias ciudadanas</h5>
                                 <Link to = {'/responderpreguntas/' + "Competencias Ciudadanas"}>
-                                    <button className = "btn btn-outline-success btn-sm mx-2">Empieza ahora</button>
+                                    <button className = "btn btn-outline-success btn-sm mx-2 mx-auto">Empieza ahora</button>
                                 </Link>
                             </div>
                         </div>
