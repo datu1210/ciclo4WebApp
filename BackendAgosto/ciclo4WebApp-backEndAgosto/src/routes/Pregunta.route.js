@@ -11,6 +11,7 @@ router.get('/buscarpregsestcat', Auth.verificartoken, PreguntaCtrl.buscarpregses
 router.get('/buscarpreguntaencaycat/:encabezado', Auth.verificartoken, PreguntaCtrl.buscarpreguntaencaycat)
 router.get('/buscarpregsest', Auth.verificartoken, PreguntaCtrl.buscarpregsest)
 router.get('/listar', Auth.verificartoken, PreguntaCtrl.listar)
+router.get('/obtenerpreguntas', Auth.verificartoken, PreguntaCtrl.obtenerpreguntas)
 router.get('/listarid/:id', Auth.verificartoken, PreguntaCtrl.listarid)
 router.get('/buscarpregsestcat', Auth.verificartoken, PreguntaCtrl.buscarpregsestcat)
 

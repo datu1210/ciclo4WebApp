@@ -52,12 +52,14 @@ export default function Nav() {
                 const apellidos = respuesta.data.apellidos
                 const rol = respuesta.data.rol
                 const idusuario = respuesta.data.id
+                var url = ""
+                rol === "Administrador" ? (url = "/usuarios"):(url = "/preguntas")
                 sessionStorage.setItem('token', token)
                 sessionStorage.setItem('rol', rol)
                 sessionStorage.setItem('nombres', nombres)
                 sessionStorage.setItem('apellidos', apellidos)
                 sessionStorage.setItem('idusuario', idusuario)
-                window.location.href = '/usuarios'
+                window.location.href = url
                 Swal.fire({
                     icon: 'success',
                     title: mensaje,

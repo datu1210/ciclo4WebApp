@@ -62,6 +62,12 @@ PreguntaCtrl.buscarpregsest = async(req, res)=>{
 }
 
 
+PreguntaCtrl.obtenerpreguntas = async(req, res)=>{
+    const respuesta = await Pregunta.find().limit(5);
+    res.json(respuesta)
+}
+
+
 /*Método para buscar preguntas de una competencia específica*/
 PreguntaCtrl.buscarpregsestcat = async(req, res)=>{
 	const ids = req.query.ids

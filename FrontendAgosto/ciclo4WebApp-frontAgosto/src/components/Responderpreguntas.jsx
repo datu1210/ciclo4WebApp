@@ -28,6 +28,9 @@ export default function Responderpreguntas(props) {
         })
 		setIdsPreguntasRes(respuesta.data) //se setean los ids de las preguntas que el estudiante ya respondió
 		if (idsPreguntasRes === "") {
+            preguntasR = await Axios.get('http://localhost:4000/pregunta/obtenerpreguntas', {
+                headers: {'autorizacion': token},
+        })
 			console.log("Nunca he utilizado el simulador")
         }
         else {

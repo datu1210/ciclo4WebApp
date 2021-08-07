@@ -27,63 +27,63 @@ export default function Resultadostc() {
       })
       if (respuesta === "") {
         console.log("Nunca he utilizado el simulador")
-          }
-          else {
-            console.log("Se le tiene")
-            // let arrayrespuestas = []
-            respuesta.data.map((res, i) => {
-              switch (res.pregunta.competencias) {
-                case 'Razonamiento Cuantitativo':
-                  if (res.correcta === "1") {
-                  resRzC = resRzC + (res.pregunta.puntaje)
-                  console.log(resRzC)
-                  }
-                  break;
+      }
+      else {
+        console.log("Se le tiene")
+        // let arrayrespuestas = []
+        respuesta.data.map((res, i) => {
+          switch (res.pregunta.competencias) {
+            case 'Razonamiento Cuantitativo':
+              if (res.correcta === "1") {
+              resRzC = resRzC + (res.pregunta.puntaje)
+              console.log(resRzC)
+              }
+              break;
 
-                    // return (
-                    //   console.log("rrrrrrrrrrrrrrrrr")
-                    // )
-                case 'Inglés':
-                  if (res.correcta === "1") {
-                    resIngles = resIngles + (res.pregunta.puntaje)
-                    console.log(resIngles)
-                  }
-                  break;
-                    // return (
-                    //   console.log("iiiiiiiiiiiiiiii")
-                    // )
-                case 'Lectura Crítica':
-                  if (res.correcta === "1") {
-                    resLecC = resLecC + (res.pregunta.puntaje)
-                    console.log(resLecC)
-                  }
-                  break;
-                  // return (
-                  //   console.log("lllllllllllll")
-                  // )
-                case 'Competencias Ciudadanas':
-                  if (res.correcta === "1") {
-                    resComC = resComC + (res.pregunta.puntaje)
-                    console.log(resComC)
-                  }
-                  break;
-                  // return (
-                  //   console.log("ccccccccccccc")
-                  // )
-                default:
-                    return (
-                      console.log("esto se imprime por defecto si no reconoce una competencia")
-                    )
-             }
-            //  return (console.log("xxxxxxxxxxxxxxxxx"))
-             return (console.log(respuesta))
-            })
-
-            setResRzCEstado (resRzC)
-            setResInglesEstado (resIngles)
-            setResLecCEstado (resLecC)
-            setResComCEstado (resComC)
+                // return (
+                //   console.log("rrrrrrrrrrrrrrrrr")
+                // )
+            case 'Inglés':
+              if (res.correcta === "1") {
+                resIngles = resIngles + (res.pregunta.puntaje)
+                console.log(resIngles)
+              }
+              break;
+                // return (
+                //   console.log("iiiiiiiiiiiiiiii")
+                // )
+            case 'Lectura Crítica':
+              if (res.correcta === "1") {
+                resLecC = resLecC + (res.pregunta.puntaje)
+                console.log(resLecC)
+              }
+              break;
+              // return (
+              //   console.log("lllllllllllll")
+              // )
+            case 'Competencias Ciudadanas':
+              if (res.correcta === "1") {
+                resComC = resComC + (res.pregunta.puntaje)
+                console.log(resComC)
+              }
+              break;
+              // return (
+              //   console.log("ccccccccccccc")
+              // )
+            default:
+                return (
+                  console.log("esto se imprime por defecto si no reconoce una competencia")
+                )
           }
+        //  return (console.log("xxxxxxxxxxxxxxxxx"))
+          return (console.log(respuesta))
+        })
+
+        setResRzCEstado (resRzC)
+        setResInglesEstado (resIngles)
+        setResLecCEstado (resLecC)
+        setResComCEstado (resComC)
+      }
     }
 
   const data = {
@@ -93,10 +93,10 @@ export default function Resultadostc() {
         label: 'Puntaje',
         data: [resRzCEstado, resInglesEstado, resLecCEstado, resComCEstado],
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)'          
+          'rgba(255, 99, 132, 1.0)',
+          'rgba(54, 162, 235, 1.0)',
+          'rgba(255, 206, 86, 1.0)',
+          'rgba(75, 192, 192, 1.0)'          
         ],
         borderColor: [
           'rgba(255, 99, 132, 1)',
@@ -122,11 +122,11 @@ export default function Resultadostc() {
   return (
     <div>
       <Nav/>
-      <div className = 'header m-5'>
+      {/* <div className = 'header m-5'>
           <h4 className = 'title'>Resultados competencias</h4>
-      </div>
-      <div className = "container">
-        <div className = "col-md-8">
+      </div> */}
+      <div className = "container mt-5">
+        <div className = "col-md-8 mx-auto">
           <Bar data = {data} options = {options} />
         </div>
       </div> 

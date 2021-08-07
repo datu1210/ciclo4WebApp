@@ -50,9 +50,24 @@ EstudianteCtrl.actualizar = async(req, res)=>{
 
 EstudianteCtrl.activar = async(req, res)=>{
 	const id = req.params.id
-	await Estudiante.findByIdAndUpdate({_id: id}, {estado: 1})
+	// var estado = req.params.constEstado
+
+	var constEstado = id.slice(-1)
+	var id2 = id.slice(0,-1)
+
+	// console.log(id + " " + estado)
+	console.log(id2 + " *********************" + constEstado)
+	var msg = ""
+	if (constEstado == 0){
+		await Estudiante.findByIdAndUpdate({_id: id2}, {estado: 1})
+		msg = "Estudiante activado"
+	}
+	else{
+		await Estudiante.findByIdAndUpdate({_id: id2}, {estado: 0})
+		msg = "Estudiante desactivado"
+	}
 	res.json({
-		mensaje: 'Estudiante activado'
+		mensaje: msg
     }) 
 }
 
