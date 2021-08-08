@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+
+import React, {useState, useEffect} from 'react'
+import {Image, Button, Modal, Jumbotron} from 'react-bootstrap'
 import practica from '../img/practica.jpg'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
@@ -10,161 +12,51 @@ import matematicas from '../img/matematica.jpg'
 import historia from '../img/historia.jpg'
 import sociales from '../img/sociales.jpg'
 
-const preguntas = [
+export default function Principal(){
+	const [nasaData, setData]=useState({})
+	const [idsPreguntasRes, setIdsPreguntasRes]=useState([])
+	const [preguntasdes, setPreguntasdes] = useState([])
+	const [showModal,setModal] = useState(false)
 
-    {
-
-        "id": "1",
-
-        "categoria": "Razonamiento cuantitativo",
-
-        "encabezado": "Este es el encabezado de la pregunta",
-
-        "opciona": "123",
-        "opcionb": "456",
-        "opcionc": "789",
-        "opciond": "000"
-
-    },
-
-    {
-
-        "id": "2",
-
-        "categoria": "Comprensión lectora",
-
-        "encabezado": "Este es el encabezado de la pregunta CL",
-
-        "opciona": "321",
-        "opcionb": "654",
-        "opcionc": "357",
-        "opciond": "090"
-
-    },
-
-    {
-
-        "id": "3",
-
-        "categoria": "Inglés",
-
-        "encabezado": "Este es el encabezado de la pregunta Inglés",
-
-        "opciona": "999",
-        "opcionb": "222",
-        "opcionc": "111",
-        "opciond": "300"
-
-    },
-
-    {
-
-        "id": "4",
-
-        "categoria": "Competencias ciudadanas",
-
-        "encabezado": "Este es el encabezado de la pregunta CC",
-
-        "opciona": "989",
-        "opcionb": "333",
-        "opcionc": "444",
-        "opciond": "555"
-
-    }
-
-]
-
-
-export default function Principal() {
-
-
-
-
-
-    const [preguntast, setPreguntast] = useState([])
-    const [resultados, setResultados] = useState([])
-    const [encabezado, setEncabezado] = useState('')
-    const [ids, setIds] = useState('')
-    const [puntaje, setPuntaje] = useState('')
-    const [estado, setEstado] = useState('')
-    const [respuestaA, setRespuestaA] = useState('')
-    const [respuestaB, setRespuestaB] = useState('')
-    const [respuestaC, setRespuestaC] = useState('')
-    const [respuestaD, setRespuestaD] = useState('')
-    const [correcta, setCorrecta] = useState([])
-    const [displayModal, setDisplayModal] = useState(false);
-    const [preguntasdes, setPreguntasdes] = useState([])
-
-    const obtenerResultados = async () => {
-        /* const id = props.match.params.id */
-        const id = sessionStorage.getItem('idusuario')
+	async function fetchData(){
+		const id = sessionStorage.getItem('idusuario')
         const token = sessionStorage.getItem('token')
-        const respuesta = await Axios.get('http://localhost:4000/resultado/buscarresultadoest/' + id, {
+		const respuesta = await Axios.get('http://localhost:4000/resultado/buscarresultadoest/' + id, {
             headers: { 'autorizacion': token }
         })
-        setResultados(respuesta.data)
-        if (resultados === "") {
-
+		setIdsPreguntasRes(respuesta.data)
+		if (idsPreguntasRes === "") {
+			console.log("Nunca he utilizado el simulador")
         }
         else {
             /* obtenerPreguntas() */
+			console.log("***********")
             let arraypreguntas = []
-            resultados.map((estudiante, i) => (
+            idsPreguntasRes.map((estudiante, i) => (
                 arraypreguntas.push(estudiante.pregunta._id)
             ))
-            const preguntasR = await Axios.get('http://localhost:4000/pregunta/buscarpregsest/', {
+			const preguntasR = await Axios.get('http://localhost:4000/pregunta/buscarpregsest/', {
                 headers: { 'autorizacion': token },
                 params: {
                     ids: arraypreguntas,
                 }
             },
             )
-            preguntasR.data.map((item, i) => (
+			/*preguntasR.data.map((item, i) => (
                 preguntasdes.push(item)
-                ))
-                setPreguntasdes (preguntasdes)
-        }
+                ))*/
 
-            /* console.log(preguntasdes) */
+            setPreguntasdes(preguntasR.data)            
+		}
+		const res=await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+		const data = await res.json()
+		setData(data)	
+	}
 
+	useEffect(()=>{fetchData()},[])
 
-        /* console.log(generico) */
-        /* console.log('http://localhost:4000/pregunta/buscarpregsest/' + arraypreguntas) */
-    }
-
-
-
-
-
-
-
-
-
-    const [index, setIndex] = useState(0);
-
-    const next = () => {
-        setIndex((i) => (i + 1) % preguntas.length);
-    };
-    const prev = () => {
-        setIndex(
-            (i) => (((i - 1) % preguntas.length) + preguntas.length) % preguntas.length
-        );
-    };
-
-    useEffect(() => {
-        obtenerResultados()
-        window.addEventListener("click", onClickOutside);
-        return () => window.removeEventListener("click", onClickOutside);
-    }, []);
-
-    const onClickOutside = (e) => {
-        if (e.target.localName !== "button") {
-            setDisplayModal(false);
-        }
-    };
-
-    return (
-        <div>
+return(
+	<>
             <Nav />
             <div className="container py-5">
 
@@ -182,7 +74,7 @@ export default function Principal() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-3 mt-3">
+					<div className="col-sm-3 mt-3">
                         <div className="card" >
                             <img src={quimica} height="200px  " width="40px" className="card-img-top" alt="quimica"></img>
                             <div className="card-body">
@@ -194,7 +86,7 @@ export default function Principal() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-3 mt-3">
+					<div className="col-sm-3 mt-3">
                         <div className="card"  >
                             <img src={matematicas} height="200px  " width="40px" className="card-img-top" alt="matematica"></img>
                             <div className="card-body">
@@ -229,58 +121,42 @@ export default function Principal() {
                                 </Link>
                             </div>
                         </div>
-                    </div>
-                    {/* FALTA COMUNICACION ESCRITA */}
-                    {/* ---------------------------------------------------Modal Todas las competencias--------------------------------------------------------------------------------------- */}
-                    <div className="modal fade" id="todas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="todasLabel" aria-hidden="true">
-                        <div className="modal-dialog modal-lg">
-                            <div className="modal-content">
-                                <div className="modal-header table-dark" style={{ backgroundColor: "#182434" }}>
-                                    <h5 className="modal-title" id="todasLabel"> {preguntas[index].categoria}</h5>
-                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div className="modal-body">
-                                    <div className="form-check">
-                                        <p>{preguntasdes[index].encabezado}</p>
-                                    </div>
-                                    <div className="form-check">
-                                        <label>
-                                            <input type="radio" name="react-tips" value="option1" className="form-check-input" />
-                                            A. {preguntasdes[index].respuestaA}
-                                        </label>
-                                    </div>
-                                    <hr />
-                                    <div className="form-check">
-                                        <label>
-                                            <input type="radio" name="react-tips" value="option1" className="form-check-input" />
-                                            B. {preguntasdes[index].respuestaB}
-                                        </label>
-                                    </div>
-                                    <hr />
-                                    <div className="form-check">
-                                        <label>
-                                            <input type="radio" name="react-tips" value="option1" className="form-check-input" />
-                                            C. {preguntasdes[index].respuestaC}
-                                        </label>
-                                    </div>
-                                    <hr />
-                                    <div className="form-check">
-                                        <label>
-                                            <input type="radio" name="react-tips" value="option1" className="form-check-input" />
-                                            D. {preguntasdes[index].respuestaD}
-                                        </label>
-                                    </div>
-                                </div>
-                                <div className="modal-footer">
-                                    <button className='btn btn-warning mr-1' onClick={next}>Siguiente</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </div>	
+	<div id="jumbo-div">
+		<Jumbotron>
+			<h3 id="page-title"> {nasaData.title}</h3>
+			<Button variant="info" onClick={()=>setModal(true)}>
+				Nasa - Detalles de Foto
+			</Button>
+		</Jumbotron>
+	</div>
+
+	<div id="modal-div">
+		<Modal size="lg" show={showModal} onHide={()=>setModal(false)}>
+			<Modal.Header closeButton>
+				<Modal.Title id="pic-title"> {nasaData.title}</Modal.Title>
+        </Modal.Header>
+			<Modal.Body id="pic-info">
+			 	<Image src={nasaData.hdurl} fluid/>
+			<h5 id="pic-sub-title">
+				{nasaData.copyright ? nasaData.copyright:"Unknown"} | {nasaData.date}
+			</h5>
+			<p id="pic-summary"><strong>Summary:</strong> {nasaData.explanation}</p>
+
+			</Modal.Body>
+			<Button variant="danger" onClick={()=>setModal(false)}> Close</Button>
+		</Modal>
+	</div>
+	<div>{preguntasdes.map( e =>
+          <div>{ e.encabezado }</div>
+        )}
         </div>
+        <div>{/*preguntasdes[0].encabezado*/}</div>
+    
+	</div>
+	</div>
+	</>
 
+)
 
-    )
 }

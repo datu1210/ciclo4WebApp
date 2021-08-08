@@ -10,6 +10,7 @@ import Preguntas from './components/Preguntas';
 import Resultadostc from './components/Resultadostc';
 import Competencia from './components/Competencia';
 import Principal from './components/Principal';
+import Principal2 from './components/Principal2';
 import Pregunta from './components/Pregunta';
 import EditarUsuario from './components/EditarUsuario';
 import Estudiantes from './components/Estudiantes';
@@ -33,6 +34,7 @@ function App() {
           <Route  path='/resultadostc' exact component={Resultadostc} />
           <Route  path='/competencia' exact component={Competencia} />
           <Route  path='/principal' exact component={Principal} />
+          <Route  path='/principal2' exact component={Principal2} />
           <Route  path='/pregunta' exact component={Pregunta} />
           <Route  path='/editarusuario/:id' exact component={EditarUsuario} />
           <Route  path='/estudiantes' exact component={Estudiantes} />
