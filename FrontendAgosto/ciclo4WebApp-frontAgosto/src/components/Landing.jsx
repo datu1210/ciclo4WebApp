@@ -6,17 +6,18 @@ import lasallebog from "../img/la-salle-bog.png";
 import MinEducación_Colombia_logo from "../img/MinEducación_Colombia_logo.png";
 import sanviator from "../img/san-viator.png";
 import Footer from "./Footer.jsx";
+import Nav from "./Nav";
 
 import "./Landing.css";
 
-import Nav from "./Nav";
+
 
 export default function Landing() {
   return (
     <>
       <Nav />
       <section id="inicio" className="text-center">
-        <div class="jumbotron pb-5">
+        <div class="jumbotron">
           <h1 class="display">
             <strong>IMAGINA TU FUTURO PROFESIONAL</strong>
           </h1>
@@ -27,12 +28,12 @@ export default function Landing() {
       </section>
 
       <section id="llamado-accion-1">
-        <div className="container p-3">
+        <div className="container">
           <div className="row">
             <div className="col-sm-12 col-md-12 text-center">
-              <h5 id="action1-color" className="p-5">
+              <h5 id="action1-color" className="m-5">
                 TrainPro es el simulador lider en entremamiento de las pruebas
-                saber, entrena con nosotros todas las competencias y aumenta tus
+                saberPRO, entrena con nosotros todas las competencias y aumenta tus
                 posibilidades de obtener el mejor resultado
               </h5>
             </div>
@@ -41,36 +42,36 @@ export default function Landing() {
       </section>
 
       <section id="intro">
-        <div className="container">
+        <div id="intro-container" className="container-fluid">
           <h1 className="text-center mt-5">¿Porque TrainPro?</h1>
-          <h3 className="text-center">
+          <h4 className="text-center m-5">
             TrainPro es el simulador lider en entremamiento de las pruebas
-            saber, entrena con nosotros todas las competencias y aumenta tus
+            saberPRO, entrena con nosotros todas las competencias y aumenta tus
             posibilidades de obtener el mejor resultado
-          </h3>
-          <div className="container">
-            <div className="row mt-3">
-              <div className="col-sm-12 col-md-4">
+          </h4>
+          <div className="container-fluid">
+            <div  className="row mt-3">
+              <div id="razon1" className="col-sm-12 col-md-4">
                 <h3 className="mt-5 ml-3 text-left">Mas Preguntas</h3>
-                <p className="m-5 mt-3">
+                <p className="m-5">
                   Tendrás acceso a un banco de preguntas actualizado, con las
                   cuales podrás conocer tus fortalezas y debilidades en las
                   áreas de tu preferencia.
                 </p>
               </div>
-              <div className="col-sm-12 col-md-4">
+              <div id="razon2" className="col-sm-12 col-md-4">
                 <h3 className="mt-5 ml-3 text-left">100% On-line</h3>
-                <p className="m-5 mt-3">
+                <p className="m-5">
                   Tendrás la opción de entrenar sin horarios y a podrás hacerlo
                   a tu propio ritmo. La plataforma está a tu disposición 24/7
-                  durante el tiempo que estes activo.
+                  durante el tiempo que estés activo.
                 </p>
               </div>
-              <div className="col-sm-12 col-md-4">
+              <div id="razon3" className="col-sm-12 col-md-4">
                 <h3 className="mt-5 ml-3 text-left">Personalizado</h3>
-                <p className="m-5 mt-3">
+                <p className="m-5">
                   Posiblidad de exportar informes académicos donde un tutor o
-                  profesor te ayudará a identificar competencias débiles, segun
+                  profesor te ayudará a identificar competencias débiles, según
                   tus resultados.
                 </p>
               </div>
@@ -81,10 +82,10 @@ export default function Landing() {
 
       <section id="about">
         <div className="container">
-          <div className="row mt-5">
+          <div className="row">
             <div className="col-sm-12 col-md-7 text-center ml-5">
               <h1 className="mt-5 text-white">SOBRE NOSOTROS</h1>
-              <p className="mt-3 text-white">
+              <p className="mb-5 text-white">
                 TrainPro es una plataforma de entrenamiento educativo, nuestro
                 objetivo es ayudar a los jóvenes e instituciones a mejorar sus
                 posibilidades de obtener mejores resultados en las pruebas Saber
@@ -96,12 +97,6 @@ export default function Landing() {
                 Cuantitativo, Competencias Ciudadanas, Comunicación Escrita e
                 Inglés.
               </p>
-              <button
-                id="btn-about"
-                className="btn mb-5 mt-2 btn-lg text-center"
-              >
-                Más Información
-              </button>
             </div>
           </div>
         </div>

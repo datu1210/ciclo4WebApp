@@ -2,11 +2,11 @@ import React from "react";
 import quimica from '../img/quimica.png'
 import matematicas from '../img/matematica.jpg'
 import historia from '../img/historia.jpg'
-import naturales from '../img/biologia.jpg'
-import ingles from '../img/ingles.jpg'
+
 import sociales from '../img/sociales.jpg'
 import {Link, Route, useParams, useRouteMatch} from "react-router-dom";
 import Nav from './Nav';
+
 
 
 export default function Competencia() {

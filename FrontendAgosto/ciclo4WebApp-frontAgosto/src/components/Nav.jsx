@@ -203,13 +203,13 @@ export default function Nav() {
                             (
                                 <ul className = "navbar-nav me-auto mb-2 mb-lg-0">
                                     <li className = "nav-item">
-                                        <a className = "nav-link" aria-current = "page" href = "#inicio active">Inicio</a>
+                                        <a className = "nav-link" aria-current = "page" href = "#inicio">Inicio</a>
                                     </li>
                                     <li className = "nav-item">
-                                        <a href = "#intro" className = "nav-link">Empresa</a>
+                                        <a href = "#intro" className = "nav-link">TrainPro</a>
                                     </li>
                                     <li className = "nav-item">
-                                        <a href = "#servicios" className = "nav-link">Servicios</a>
+                                        <a href = "#about" className = "nav-link">About</a>
                                     </li>
                                     <li className = "nav-item">
                                         <a href = "#testimonios" className = "nav-link">Testimonios</a>
