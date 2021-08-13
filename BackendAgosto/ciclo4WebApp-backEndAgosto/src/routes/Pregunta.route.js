@@ -19,7 +19,7 @@ router.post('/crear', Auth.verificartoken, PreguntaCtrl.crearPregunta)
 
 
 router.put('/actualizar/:id', Auth.verificartoken, PreguntaCtrl.actualizar)
-router.put('/activar/:id', Auth.verificartoken, PreguntaCtrl.activar)
+router.put('/activar/:id', PreguntaCtrl.activar)
 router.put('/desactivar/:id', Auth.verificartoken, PreguntaCtrl.desactivar)
 
 

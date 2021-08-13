@@ -10,7 +10,7 @@ router.get('/listar/', Auth.verificartoken, UsuarioCtrl.listar)
 router.get('/listarid/:id', Auth.verificartoken, UsuarioCtrl.listarid)
 
 router.post('/login', UsuarioCtrl.login)
-router.post('/crear', Auth.verificartoken, UsuarioCtrl.crearUsuario)
+router.post('/crear', UsuarioCtrl.crearUsuario)
 
 router.put('/actualizar/:id', Auth.verificartoken, UsuarioCtrl.actualizar)
 // router.put('/activar/:id', Auth.verificartoken, UsuarioCtrl.activar)

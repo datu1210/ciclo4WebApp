@@ -10,7 +10,6 @@ export default function Estudiantes() {
     const [nombres, setNombres] = useState('')
     const [apellidos, setApellidos] = useState('')
     const [correo, setCorreo] = useState('')
-    const [estado, setEstado] = useState('')
     const [contrasena, setContrasena] = useState('')
     const [programa, setPrograma] = useState([])
     const [programaSelect, setProgramaSelect] = useState('')
@@ -22,7 +21,6 @@ export default function Estudiantes() {
     }, [])
 
     const obtenerEstudiantes = async () => {
-        const id = sessionStorage.getItem('idestudiante')
         const token = sessionStorage.getItem('token')
         const respuesta = await Axios.get('http://localhost:4000/estudiante/listarestudiantes',
             {
@@ -100,7 +98,7 @@ export default function Estudiantes() {
     return (
         <div>
             <Nav />
-            {/*BARRADEBUSQUEDA*/}
+        
             <nav className = 'navbar py-4'>
                 <div className = "container">
                     <div className = "col-md-3">
@@ -110,9 +108,7 @@ export default function Estudiantes() {
                             data-bs-toggle = 'modal'
                             data-bs-target = '#addEstudiante'
                         >
-                            <i className = 'fas fa-plus'>
-                            </i> 
-                            Add Estudiante
+                            <i className = 'fas fa-plus'></i> Add Estudiante
                         </Link>
                     </div>
                     <div className = "col-md-6 ml-auto">

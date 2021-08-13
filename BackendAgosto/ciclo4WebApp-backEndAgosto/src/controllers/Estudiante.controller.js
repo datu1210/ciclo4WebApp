@@ -50,12 +50,12 @@ EstudianteCtrl.actualizar = async(req, res)=>{
 
 EstudianteCtrl.activar = async(req, res)=>{
 	const id = req.params.id
-	// var estado = req.params.constEstado
+	
 
 	var constEstado = id.slice(-1)
 	var id2 = id.slice(0,-1)
 
-	// console.log(id + " " + estado)
+	
 	console.log(id2 + " *********************" + constEstado)
 	var msg = ""
 	if (constEstado == 0){

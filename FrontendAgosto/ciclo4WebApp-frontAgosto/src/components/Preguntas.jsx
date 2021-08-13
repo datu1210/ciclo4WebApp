@@ -9,7 +9,6 @@ export default function Preguntas() {
     const [preguntas, setPreguntas] = useState([])
     const [encabezado, setEncabezado] = useState('')
     const [puntaje, setPuntaje] = useState('')
-    const [estado, setEstado] = useState('')
     const [respuestaA, setRespuestaA] = useState('')
     const [respuestaB, setRespuestaB] = useState('')
     const [respuestaC, setRespuestaC] = useState('')
@@ -79,13 +78,37 @@ export default function Preguntas() {
         }, 1500)
     }
 
+    const ActDes = async (e) => {
+        // const constEstado = (e.target.value).slice(-1)
+        // const id = (e.target.value).slice(0,-1)
+        e.preventDefault()
+        const id = (e.target.value)
+        // console.log(constEstado)
+        // console.log(id)
+        // console.log(e.target.value)
+        const token = sessionStorage.getItem('token')
+        
+        const respuesta = await Axios.put('http://localhost:4000/pregunta/activar/' + id, {
+        // const respuesta = await Axios.put('http://localhost:4000/pregunta/activar/' + id, constEstado, {
+            headers: {'autorizacion': token}
+        })
+        const mensaje = respuesta.data.mensaje
+        Swal.fire({
+            icon: 'success',
+            title: mensaje,
+            showConfirmButton: false
+        })
+        setTimeout(() => {
+            window.location.href = '/preguntas'
+        }, 3000)
+    }
+
 
     return (
         <div>
             <Nav />
 
-            {/*BARRADEBUSQUEDA*/}
-
+            
             <nav className = 'navbar py-4'>
                 <div className = "container">
                     <div className = "col-md-3">
@@ -95,8 +118,7 @@ export default function Preguntas() {
                             data-bs-toggle = 'modal'
                             data-bs-target = '#addPregunta'
                         >
-                            <i className = 'fas fa-plus'></i> 
-                            Add Pregunta
+                            <i className = 'fas fa-plus'></i> Add Pregunta
                         </Link>
                     </div>
                     <div className = "col-md-6 ml-auto">
@@ -113,7 +135,7 @@ export default function Preguntas() {
                 </div>
             </nav>
 
-            {/*MOSTRAR PREGUNTAS*/}
+         
             <section>
                 <div className = "container">
                     <div className = "row">
@@ -151,11 +173,13 @@ export default function Preguntas() {
                                                         <td>
                                                             <button
                                                                 type = "button"
-                                                                class = "btn btn-outline-danger"
+                                                                className = "btn btn-outline-danger"
                                                                 data-bs-toggle = "button"
                                                                 autocomplete = "off"
+                                                                value = {pregunta._id + pregunta.estado}
+                                                                onClick = {(e) => ActDes(e)} 
                                                             >
-                                                                Desactivado
+                                                                Activar/Desactivar
                                                             </button>
                                                         </td>
                                                     </tr>
@@ -169,7 +193,7 @@ export default function Preguntas() {
 
                 </div>
             </section>
-            {/*VENTANA MODAL*/}
+         
 
             <div className = 'modal fade' id = 'addPregunta'>
                 <div className = 'modal-dialog modal-lg'></div>

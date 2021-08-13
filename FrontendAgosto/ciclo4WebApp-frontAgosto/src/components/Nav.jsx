@@ -6,24 +6,8 @@ import './NavEstilo.css';
 import trainpro3 from '../img/Logo_TrainPro_sin_letras.svg';
 import axios from 'axios'
 
-// El siguiente import es solo para simular datos pedidos al back al igual que el archivo EstadoUsuario.json
-
-
 
 export default function Nav() {
-    /*    var Usuario = 
-       {
-           "tipoUsuario": "Admin",
-           "organizacion": "OrganizacionX",
-           "nombre": "Nombre",
-           "apellidos": "Apellido"
-       } */
-
-    // const rol1="Administrador"
-    // const rol1="Profesor"
-    // const rol1="Estudiante"
-    //const rol1="Visitante"
-
 
     const [correo, setCorreo] = useState('')
     const [contrasena, setContrasena] = useState('')
@@ -107,15 +91,16 @@ export default function Nav() {
         "nombre": sessionStorage.getItem('nombres'),
         "apellidos": sessionStorage.getItem('apellidos')
     }
+
     var rol1 = Usuario.tipoUsuario
 
     var salir = () => {
         sessionStorage.clear()
         window.location.href = '/Landing'
-        alert("Ejecutando salir")
+        // alert("Ejecutando salir")
     }
     if (Usuario.tipoUsuario === null) {
-        var rol1 = "Visitante"
+        rol1 = "Visitante"
     }
 
 
@@ -203,13 +188,13 @@ export default function Nav() {
                             (
                                 <ul className = "navbar-nav me-auto mb-2 mb-lg-0">
                                     <li className = "nav-item">
-                                        <a className = "nav-link" aria-current = "page" href = "#inicio">Inicio</a>
+                                        <a className = "nav-link" aria-current = "page" href = "#inicio active">Inicio</a>
                                     </li>
                                     <li className = "nav-item">
-                                        <a href = "#intro" className = "nav-link">TrainPro</a>
+                                        <a href = "#intro" className = "nav-link">Empresa</a>
                                     </li>
                                     <li className = "nav-item">
-                                        <a href = "#about" className = "nav-link">About</a>
+                                        <a href = "#servicios" className = "nav-link">Servicios</a>
                                     </li>
                                     <li className = "nav-item">
                                         <a href = "#testimonios" className = "nav-link">Testimonios</a>
@@ -273,7 +258,9 @@ export default function Nav() {
                             data-bs-toggle = "dropdown"
                             aria-expanded = "false"
                         >
-                            Login
+                            {rol1 === "Visitante" ? 
+                            (<>Login</>):
+                            (<>Usuario</>)}
                         </button>
                         {/* ------- */}
                         <div className = "dropdown-menu dropdown-menu-end">
@@ -303,11 +290,10 @@ export default function Nav() {
                                         />
                                     </div>
                                     <div className = "mb-3">
-                                        <select onChange = {(e) => setTipo(e.target.value)} className = "form-select" aria-label = "Default select example">
-                                            <option selected>Seleccione el tipo</option>
+                                        <select onChange = {(e) => setTipo(e.target.value)} className = "form-select" aria-label = "select">
                                             <option value = "usuarios">Administrador</option>
                                             <option value = "usuarios">Profesor</option>
-                                            <option value = "estudiantes">Estudiante</option>
+                                            <option value = "estudiantes" selected >Estudiante</option>
                                         </select>
                                     </div>
                                     <div className = "mb-3">
@@ -326,13 +312,13 @@ export default function Nav() {
                                 </form>
                             ):
                                 (
-                                    <form className = "px-4 py-3">
-                                        <label for = "exampleDropdownFormTipoDeUsuario" className = "form-label">{Usuario.nombre + ' ' + Usuario.apellidos}</label>
-                                        <label for = "exampleDropdownFormTipoDeUsuario" className = "form-label">{Usuario.tipoUsuario}</label>
+                                    <form className = "px-4 py-3 text-left">
+                                        <label for = "usuarioTipo" className = "form-label text-muted">{Usuario.tipoUsuario + ":"}</label>
+                                        <label for = "usuarioNombre" className = "form-label text-nowrap fw-bold">{Usuario.nombre + ' ' + Usuario.apellidos}</label>
 
                                         {/* FALTA LOGICA PARA QUE AL PRESIONAR CERRAR SESION CAMBIE DEL USUARIO ACTUAL A "sinusuario" */}
                                         <div className = "dropdown-divider"></div>
-                                        <button type = "button" onClick = {() => salir()} className = "dropdown-item"> Cerrar sesión</button>
+                                        <button type = "button" onClick = {() => salir()} className = "dropdown-item text-muted">Cerrar sesión</button>
                                     </form>
                                 )
                             }

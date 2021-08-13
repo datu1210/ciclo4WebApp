@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Axios from 'axios'
 import Swal from 'sweetalert2'
 import Nav from './Nav';
-// import {Link} from 'react-router-dom'
+
 
 export default function Responderpreguntas(props) {
 
@@ -112,7 +112,7 @@ export default function Responderpreguntas(props) {
         
         var d = new Date(),
             fecha = [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-') + ' ' + [d.getHours(), d.getMinutes(), d.getSeconds()].join(':');
-        console.log("*********La fecha: " + fecha)       
+        console.log("*****La fecha: " + fecha)       
         
                 
         var msjaciertos = ""
@@ -157,7 +157,7 @@ export default function Responderpreguntas(props) {
           }) //fin del primer foreach
         
         arrayresultados.map((res, i) => (
-            console.log("****" + res.correcta)
+            console.log("**" + res.correcta)
         ))
 
       arrayresultados.forEach((resul, keys) => {            

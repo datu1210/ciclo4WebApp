@@ -5,7 +5,6 @@ import Nav from './Nav';
 
 export default function EditarEstudiante(props) {
 
-    const [estudiantes, setEstudiantes] = useState([])
     const [nombres, setNombres] = useState('')
     const [apellidos, setApellidos] = useState('')
     const [correo, setCorreo] = useState('')
@@ -90,19 +89,23 @@ export default function EditarEstudiante(props) {
                         <label className = 'form-label'>Programa</label>
                         <select 
                             className = 'form-control' 
-                            value = {programa} 
                             required 
                             onChange = {(e) => setProgramaSelect(e.target.value)} 
                         >
+                                <option value="">
+                                    seleccione un programa
+                                </option>
                             {
                                 programa.map(programa1 => (
                                     <option key = {programa1}>
                                         {programa1}
-                                    </option>
+                                    </option>                                        
+                                    
                                 ))
 
                             }
                         </select>
+
                     </div>
                     <div className = "mb-3">
                         <label className = 'form-label'> Correo</label>

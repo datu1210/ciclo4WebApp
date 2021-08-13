@@ -51,12 +51,11 @@ PreguntaCtrl.buscarpreguntaencaycat = async(req, res)=>{
 	res.json(respuesta)
 }
 
-/*Método para buscar preguntas de cualquier competencia*/
-//Averiguar si se pueden sacar aleatorias
+
 
 PreguntaCtrl.buscarpregsest = async(req, res)=>{
 	const ids = req.query.ids
-	console.log("los ids" + ids)
+	console.log("los ids" + ids);
 	const respuesta = await Pregunta.find({ '_id': { $nin: ids} }).limit(5);
 	res.json(respuesta)
 }
@@ -68,7 +67,7 @@ PreguntaCtrl.obtenerpreguntas = async(req, res)=>{
 }
 
 
-/*Método para buscar preguntas de una competencia específica*/
+
 PreguntaCtrl.buscarpregsestcat = async(req, res)=>{
 	const ids = req.query.ids
 	const competencias = req.query.comp
@@ -80,9 +79,24 @@ PreguntaCtrl.buscarpregsestcat = async(req, res)=>{
 
 PreguntaCtrl.activar = async(req, res)=>{
 	const id = req.params.id
-	await Pregunta.findByIdAndUpdate({_id: id}, {estado: 1})
+	
+
+	var constEstado = id.slice(-1)
+	var id2 = id.slice(0,-1)
+
+	
+	console.log(id2 + " *******" + constEstado)
+	var msg = ""
+	if (constEstado == 0){
+		await Pregunta.findByIdAndUpdate({_id: id2}, {estado: 1})
+		msg = "Pregunta activada"
+	}
+	else{
+		await Pregunta.findByIdAndUpdate({_id: id2}, {estado: 0})
+		msg = "Pregunta desactivada"
+	}
 	res.json({
-		mensaje:'Pregunta activada'
+		mensaje: msg
     }) 
 }
 

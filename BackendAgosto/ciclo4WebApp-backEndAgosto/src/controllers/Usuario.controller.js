@@ -64,7 +64,7 @@ UsuarioCtrl.login = async(req, res)=>{
 UsuarioCtrl.actualizar = async(req, res)=>{
 	const id = req.params.id
 	req.body.contrasena = await bcrypt.hash(req.body.contrasena, 10) 
-	/* await bcrypt.hash(req.body.contrasena, 10)  */
+
 	await Usuario.findByIdAndUpdate({_id: id}, req.body)
 	res.json({
 		mensaje: 'Usuario actualizado'
@@ -72,21 +72,15 @@ UsuarioCtrl.actualizar = async(req, res)=>{
 }
 
 
-// UsuarioCtrl.activar = async(req, res)=>{
-// 	const id = req.params.id
-// 	await Usuario.findByIdAndUpdate({_id: id}, {estado: 1})
-// 	res.json({
-// 		mensaje: 'Usuario activado'
-//     }) 
-// }
+
 UsuarioCtrl.activar = async(req, res)=>{
 	const id = req.params.id
-	// var estado = req.params.constEstado
+	
 
 	var constEstado = id.slice(-1)
 	var id2 = id.slice(0,-1)
 
-	// console.log(id + " " + estado)
+
 	console.log(id2 + " *********************" + constEstado)
 	var msg = ""
 	if (constEstado == 0){

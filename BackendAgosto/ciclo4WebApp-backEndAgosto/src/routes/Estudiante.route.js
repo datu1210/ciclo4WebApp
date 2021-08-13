@@ -13,7 +13,6 @@ router.post('/login', EstudianteCtrl.login)
 router.post('/crear', Auth.verificartoken, EstudianteCtrl.crearEstudiante)
 
 router.put('/actualizar/:id', Auth.verificartoken, EstudianteCtrl.actualizar)
-// router.put('/activar/:id', Auth.verificartoken, EstudianteCtrl.activar)
 router.put('/activar/:id', EstudianteCtrl.activar)
 router.put('/desactivar/:id', Auth.verificartoken, EstudianteCtrl.desactivar)
 
