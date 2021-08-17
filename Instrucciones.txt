@@ -1,0 +1,42 @@
+Url del Back: https://github.com/datu1210/ciclo4WebApp/tree/backEndAgosto
+
+Url del front: https://github.com/datu1210/ciclo4WebApp/tree/frontAgosto
+_________________
+Para el backend:
+npm init
+npm i express nodemon mongoose cors morgan body-parser bcryptjs jsonwebtoken mongoose-autopopulate
+
+Para correr el back: npm run dev
+_________________
+Para el front:
+npm i axios sweetalert2 react-router-dom react-chartjs-2
+
+Para correr el front: npm start
+_________________
+En el postman:
+http://localhost:4000/usuario/crear
+En el body, ingresar: nombres, apellidos, correo, contrasena, estado, rol
+
+poner en estado: 1
+y en rol: Administrador
+
+Así ingresa al sistema y puede crear estudiante y preguntas
+Luego de esto, con el postman ingresar resultados de la siguiente manera:
+
+En una petición POST
+En Body Raw
+http://localhost:4000/resultado/guardar
+
+{
+     "fecha":"2021-08-01T15:45:12",
+     "correcta":"1",
+      "pregunta": 
+        {
+         "_id":"Copie aqui un id de pregunta válido"
+        }
+        ,
+        "estudiante":
+        {
+         "_id":"Copie aqui un id de estudiante válido"
+        }
+}

@@ -1,0 +1,59 @@
+body {
+    font-size: 1.2rem;
+  }
+
+#llamado-accion-1 {
+    background: #214189;
+    
+}
+
+#inicio {
+  background: url("../img/Jovenes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.jumbotron {
+  width: 100%;
+  height: 600px;
+  background: rgba(0, 0, 0, 0);
+  padding-top: 50;
+  margin:0%
+
+}
+
+#action1-color{
+    color: #ff7f00;
+}
+
+#intro{
+margin-top: 5;
+padding: 0%;
+}
+
+#intro-container{
+  padding: 0%;
+}
+
+
+#razon1{
+  background-color: #3ff;
+  padding: 1%;
+}
+
+#razon2{
+  background-color: #5ff6;
+  padding: 1%;
+
+}
+
+#razon3{
+  background-color: #8f5f;
+  padding: 1%;
+}
+
+#about {
+  background-image: url(../img/grado2.jpg);
+  background-repeat: no-repeat;
+  text-align: justify;
+}
