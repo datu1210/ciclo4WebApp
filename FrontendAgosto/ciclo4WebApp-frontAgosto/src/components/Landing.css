@@ -54,6 +54,7 @@ padding: 0%;
 
 #about {
   background-image: url(../img/grado2.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   text-align: justify;
 }

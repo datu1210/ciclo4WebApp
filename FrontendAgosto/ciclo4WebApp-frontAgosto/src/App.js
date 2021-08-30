@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 
 
 import Registro from './components/Registro';
@@ -45,25 +45,23 @@ const MiRoute = (props) => {
 function App() {
   return (
     <Router>     
-
-
-          <Route path = '/landing' exact component = {Landing} />       
-          <MiRoute  path = '/login' exact component = {Login} />
-          <MiRoute  path = '/registrar' exact component = {Registro} />
-          <MiRoute  path = '/usuarios' exact component = {Usuarios} />
-          <MiRoute  path = '/preguntas' exact component = {Preguntas} />
-          <MiRoute  path = '/resultadostc' exact component = {Resultadostc} />
-          <MiRoute  path = '/competencia' exact component = {Competencia} />
-          <MiRoute  path = '/principal' exact component = {Principal} />
-          <MiRoute  path = '/pregunta' exact component = {Pregunta} />
-          <MiRoute  path = '/editarusuario/:id' exact component = {EditarUsuario} />
-          <MiRoute  path = '/estudiantes' exact component = {Estudiantes} />
-          <MiRoute  path = '/editarestudiante/:id' exact component = {EditarEstudiante} />
-          <MiRoute  path = '/editarpregunta/:id' exact component = {EditarPregunta} />
-          <MiRoute  path = '/responderpreguntas/:comp' exact component = {Responderpreguntas} />
-          <MiRoute  path = '/reportes/' exact component = {Reportes} />
-        
-          
+      <Switch>
+        <Route path = '/landing' exact component = {Landing} />       
+        <MiRoute  path = '/login' exact component = {Login} />
+        <MiRoute  path = '/registrar' exact component = {Registro} />
+        <MiRoute  path = '/usuarios' exact component = {Usuarios} />
+        <MiRoute  path = '/preguntas' exact component = {Preguntas} />
+        <MiRoute  path = '/resultadostc' exact component = {Resultadostc} />
+        <MiRoute  path = '/competencia' exact component = {Competencia} />
+        <MiRoute  path = '/principal' exact component = {Principal} />
+        <MiRoute  path = '/pregunta' exact component = {Pregunta} />
+        <MiRoute  path = '/editarusuario/:id' exact component = {EditarUsuario} />
+        <MiRoute  path = '/estudiantes' exact component = {Estudiantes} />
+        <MiRoute  path = '/editarestudiante/:id' exact component = {EditarEstudiante} />
+        <MiRoute  path = '/editarpregunta/:id' exact component = {EditarPregunta} />
+        <MiRoute  path = '/responderpreguntas/:comp' exact component = {Responderpreguntas} />
+        <MiRoute  path = '/reportes/' exact component = {Reportes} />
+      </Switch>
     </Router>
   );
 }

@@ -7,6 +7,7 @@ import MinEducación_Colombia_logo from "../img/MinEducación_Colombia_logo.png"
 import sanviator from "../img/san-viator.png";
 import Footer from "./Footer.jsx";
 import Nav from "./Nav";
+import Testimonios from "./Testimonios";
 
 import "./Landing.css";
 
@@ -168,39 +169,9 @@ export default function Landing() {
       </section>
 
       <section id="testimonios">
-        <div className="container mb-5">
-          <h1 className="text-center mt-5">Testimonios</h1>
-          <div className="row mt-5">
-            <div className="col-sm12 col-md-6 text-center">
-              <div className="card">
-                <div className="card-body">
-                  <p className="mt-5">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta est laudantium quidem adipisci reiciendis sed minima
-                    expedita sunt?
-                  </p>
-                  <cite>
-                    <strong>Jon Doe</strong>
-                  </cite>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-sm12 col-md-6 text-center">
-              <div className="card">
-                <div className="card-body">
-                  <p className="mt-5">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Soluta est laudantium quidem adipisci reiciendis sed minima
-                    expedita sunt?
-                  </p>
-                  <cite>
-                    <strong>Jon Doe</strong>
-                  </cite>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="container-fluid m-5">
+          <h1 className="mt-5 mb-5 text-center">Testimonios</h1>
+          <Testimonios></Testimonios>
         </div>
       </section>
 
